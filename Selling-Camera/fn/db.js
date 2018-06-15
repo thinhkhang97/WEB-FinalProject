@@ -6,7 +6,7 @@ exports.load = sql =>{
         var con = mysql.createConnection({
             host: 'localhost',
             user:'root',
-            password:'msqlntk100397',
+            password:'',
             database:'camera'
         });
 
@@ -28,8 +28,9 @@ exports.save = sql=>{
     return new Promise((resolve, reject)=>{
         var con = mysql.createConnection({
             host:'localhost',
+            port:3306,
             user:'root',
-            password:'msqlntk100397',
+            password:'',
             database:'camera'
         });
 
