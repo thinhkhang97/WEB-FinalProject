@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
             errorMsg: 'Login failed'
         };
         res.render('home/index', {
-            login: false
+            login: true
         });
     }
 });

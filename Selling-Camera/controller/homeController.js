@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/',(req,res)=>{
     res.render('home/index', {
-        login: true
+        login: false
     });
 });
 

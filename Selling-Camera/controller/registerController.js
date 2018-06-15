@@ -20,7 +20,9 @@ router.post('/', (req, res) => {
 
         var sql = `insert into users(username, passwords, email) values('${user.username}', '${user.password}', '${user.email}')`;
     db.save(sql);
-    res.render('register/index');
+    res.render('register/index',{
+        register:false
+    });
     }
 
     
