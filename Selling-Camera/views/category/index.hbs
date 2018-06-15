@@ -1,1 +1,29 @@
 <div class="center_title_bar">Loại sản phẩm {{catID}}</div>
+{{#each proCodes}}
+<div class="prod_box">
+    <div class="top_prod_box"></div>
+    <div class="center_prod_box">
+        <div class="product_title">
+            <a href="details.html">{{proCode}}</a>
+        </div>
+        <div class="product_img">
+            <a href="details.html">
+                <img src="images/{{catName}}/{{proCode}}.jpg" alt="" border="0" width="50" height="80" />
+            </a>
+        </div>
+        <div class="prod_price">
+            <span class="price">{{proPrice}} VND</span>
+        </div>
+    </div>
+    <div class="bottom_prod_box"></div>
+    <div class="prod_details_tab">
+        <a href="#" title="Đã bán 100 sản phẩm">
+            <img src="images/favs.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a href="#" title="13658 lượt xem">
+            <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a class="prod_details">1/3/2017</a>
+    </div>
+</div>
+{{/each}}
