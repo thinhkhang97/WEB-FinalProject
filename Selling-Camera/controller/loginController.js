@@ -22,20 +22,17 @@ router.post('/', (req, res) => {
             req.session.isLogged = true;
             req.session.user = rows[0];
             req.session.cart = [];
-            login: true;
+            var vm={
+                login:true
+            }
     
-            var url = '/';
+            var url = 'home';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
-            res.redirect(url);
-            
-    
+            res.render(url, vm);
         } else {
-            var vm = {
-                showError: true,
-                errorMsg: 'Login failed'
-            };
+                res.render('login/index');
         }
     });
 
