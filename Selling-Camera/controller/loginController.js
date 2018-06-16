@@ -9,31 +9,38 @@ router.get('/',(req,res)=>{
 router.post('/', (req, res) => {
     var user = {
         username: req.body.username,
-        password: SHA256(req.body.rawPWD).toString()
+        password: SHA256(req.body.password).toString()
     };
 
+    console.log(user.username);
+    console.log(user.password);
+
     var sql = `select * from users where username = '${user.username}' and passwords = '${user.password}'`;
-    var rows = db.load(sql);
-
-    if (rows.length > 0) {
-        req.session.isLogged = true;
-        req.session.user = rows[0];
-        req.session.cart = [];
-
-        var url = '/';
-        if (req.query.retUrl) {
-            url = req.query.retUrl;
+    db.load(sql).then(rows=>{
+        console.log(rows.length);
+        if (rows.length > 0) {
+            req.session.isLogged = true;
+            req.session.user = rows[0];
+            req.session.cart = [];
+            login: true;
+    
+            var url = '/';
+            if (req.query.retUrl) {
+                url = req.query.retUrl;
+            }
+            res.redirect(url);
+            
+    
+        } else {
+            var vm = {
+                showError: true,
+                errorMsg: 'Login failed'
+            };
         }
-        res.redirect(url);
+    });
 
-    } else {
-        var vm = {
-            showError: true,
-            errorMsg: 'Login failed'
-        };
-        res.render('home/index', {
-            login: true
-        });
-    }
+    
+
+    
 });
 module.exports = router;
