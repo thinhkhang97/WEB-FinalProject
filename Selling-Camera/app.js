@@ -7,6 +7,7 @@ var manufactureController = require('./controller/manufactureController');
 var registerController=require('./controller/registerController');
 var loginController=require('./controller/loginController');
 var searchController=require('./controller/searchController');
+var handleLayoutVM = require('./middle-wares/handleLayout');
 var body_parser = require('body-parser');
 var path = require('path');
 
@@ -54,7 +55,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
+app.use(handleLayoutVM);
 app.use('/',homeController);
 app.use('/category',categoryController);
 app.use('/manufacture',manufactureController);
