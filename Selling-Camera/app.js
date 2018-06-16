@@ -6,6 +6,7 @@ var categoryController = require('./controller/categoryController');
 var manufactureController = require('./controller/manufactureController');
 var registerController=require('./controller/registerController');
 var loginController=require('./controller/loginController');
+var searchController=require('./controller/searchController');
 var body_parser = require('body-parser');
 var path = require('path');
 
@@ -59,6 +60,7 @@ app.use('/category',categoryController);
 app.use('/manufacture',manufactureController);
 app.use('/register',registerController);
 app.use('/login',loginController);
+app.use('/search',searchController);
 app.listen(3000,(err)=>{
     if(err) throw err;
     console.log('server is running at port 3000');
