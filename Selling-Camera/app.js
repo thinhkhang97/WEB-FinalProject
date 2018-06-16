@@ -6,6 +6,7 @@ var categoryController = require('./controller/categoryController');
 var manufactureController = require('./controller/manufactureController');
 var registerController=require('./controller/registerController');
 var loginController=require('./controller/loginController');
+var handleLayoutVM = require('./middle-wares/handleLayout');
 var body_parser = require('body-parser');
 var path = require('path');
 
@@ -34,7 +35,7 @@ var sessionStore = new MySQLStore({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: '',
+    password: 'msqlntk100397',
     database: 'camera',
     schema: {
         tableName: 'sessions',
@@ -53,7 +54,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
+app.use(handleLayoutVM);
 app.use('/',homeController);
 app.use('/category',categoryController);
 app.use('/manufacture',manufactureController);
