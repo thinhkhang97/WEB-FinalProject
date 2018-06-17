@@ -1,0 +1,118 @@
+.profile a{
+    width: 166px;
+    height: 25px;
+    display: block;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: #dad0d0;
+    background-position: 5px 5px;
+    border-bottom: 1px #FFFFFF solid;
+    text-decoration: none;
+    color: #504b4b;
+    padding: 0 0 0 30px;
+    line-height: 25px;
+}
+.profile a:hover {
+    background: no-repeat left #7bbcc7;
+    color: #FFFFFF;
+    background-position: 5px 5px;
+}
+.profile_active a{
+    width: 166px;
+    height: 25px;
+    display: block;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: #DAD08A;
+    background-position: 5px 5px;
+    border-bottom: 1px #FFFFFF solid;
+    text-decoration: none;
+    color: #504b4b;
+    padding: 0 0 0 30px;
+    line-height: 25px;
+}
+.account-profile {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 50px 10px 30px;
+    background: #fff;
+    border-radius: 4px;
+}
+.account-profile .form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.label_form, .control-label{
+    float: none;
+    width: 20%;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+.input-wrap{
+    float: none;
+    padding-top: 10px;
+    width: 380px;
+    margin: 0;
+}
+.input-wrap{
+    border-radius: 0 3px 3px 0;
+    color: #4a4a4a;
+    font-size: 13px;
+    background-color: #fdd835;
+    display: inline-block;
+    width: 161px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 500;
+}
+input[placeholder] {
+    text-overflow: ellipsis;
+}
+
+.form-control {
+    border-radius: 3px;
+    width: 49%;
+    height: 5px;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 13px;
+    padding: 14px 12px;
+    background-color: #fff;
+}
+.password-group {
+    display: none;
+}
+.birthday-picker select {
+    display: inline-block;
+    width: 20%;
+}
+.birth-control{
+    border-radius: 3px;
+    width: 30%;
+    height: 28px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+fieldset, legend {
+    padding: 0;
+    border: 0;
+}
+.checkbox{
+    font-size: 13px;
+}
+.btn-update{
+    border-radius: 0 3px 3px 0;
+    border: none;
+    color: #4a4a4a;
+    font-size: 13px;
+    background-color: #fdd835;
+    display: inline-block;
+    line-height: 25px;
+}

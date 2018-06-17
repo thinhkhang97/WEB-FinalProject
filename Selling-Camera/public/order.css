@@ -1,0 +1,142 @@
+.content-right {
+    width: 799px;
+    margin-left: 5px;
+    position: relative;
+    float: left;
+}
+
+.order-title {
+    margin-bottom: 5px;
+    font-size: 13px;
+    height: 25px;
+    background: none no-repeat center #3B999F;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px solid #3B999F;
+    color: #fff;
+}
+
+.order-board {
+    font-size: 13px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+}
+
+.table-custom {
+    width: 100%;
+    color: #424242;
+    display: table;
+    margin-bottom: 10px;
+}
+
+.table-custom thead tr th {
+    background: 0 0;
+    color: #787878;
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 1px #f4f4f4 solid;
+    padding: 10px 15px;
+    position: relative;
+}
+.table-custom tbody tr td {
+    border: none;
+    padding: 10px 15px;
+    color: #242424;
+    vertical-align: top;
+    position: relative;
+}
+.table-custom tbody tr td:last-child {
+    text-align: right;
+}
+.table-custom tbody tr {
+    border-bottom: 1px #f4f4f4 solid;
+}
+a, a:hover {
+    color: blue;
+    text-decoration: none;
+}
+.table-custom tbody tr:hover{
+	background-color: lightblue;
+}
+
+.orderview-title {
+    margin-bottom: 5px;
+    font-size: 15px;
+    height: 25px;
+    text-align: center;
+    background: none no-repeat center #3B999F;
+    font-weight: bold;
+    border-radius: 5px solid #3B999F;
+    color: #fff;
+}
+p.date {
+	float: right;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 5px;
+    height: 23px;
+}
+.account-order-detail {
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 150px;
+    background-color: #dad0d0;
+}
+.account-order-detail .address-1{
+    width: 37%;
+    vertical-align: top;
+    margin-top: 10px;
+    float: left;
+    margin-right: 5px;
+    margin-left: 10px;
+
+}
+.account-order-detail .payment-1,.account-order-detail .payment-2 {
+    width: 30%;
+    vertical-align: top;
+    margin-top: 10px;
+    float: left;
+    margin-right: 5px;
+}
+.account-order-detail .payment-2{
+	margin-right: 0px;
+}
+.address-1 h3,.payment-1 h3,.payment-2 h3 {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.address-1 div,.payment-1 div,.payment-2 div {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    line-height: 1.5;
+    min-height: 95px;
+}
+.table-custom tfoot{
+    border-bottom: 1px #f4f4f4 solid;
+}
+.table-custom tfoot tr td {
+    padding: 5px 20px;
+    max-width: 550px;
+    min-width: 125px;
+    text-align: right;
+}
+.table-custom tfoot tr:first-child td {
+    padding-top: 20px;
+}
+.table-custom tfoot tr td span.sum {
+    color: #ff3b27;
+    font-size: 15px;
+    font-weight: bold;
+}
