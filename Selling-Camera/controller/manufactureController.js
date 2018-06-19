@@ -1,37 +1,20 @@
 var express = require('express');
 var proRepo = require('../repository/productRepo');
+var getFolder = require('../fn/getFolder');
+var moment = require('moment');
 var router = express.Router();
 router.get('/', (req, res) => {
 
     var vm = {
         manID: req.query.id
     }
-    var ID = 1;
-    if (vm.manID === 'Cannon') {
-        ID = 1;
-    }
-
-    else if (vm.manID === 'Sony') {
-        ID = 2;
-    }
-    else if (vm.manID === 'Nikon') {
-        ID = 3;
-    }
-    else {
-        ID = 4;
-    }
+    var ID =getFolder.getManufactureByName(vm.manID);
     proRepo.loadProductByManuID(ID).then(rows => {
         for (r of rows) {
-            if (r.proCatID === 1)
-                r["catName"] = "DSLR"
-            else if (r.proCatID === 2)
-                r["catName"] = "DuLich"
-            else if (r.proCatID === 3)
-                r["catName"] = "LayLien"
-            else
-                r["catName"] = "Mirr"
+            var time = moment(r.proDate,'YYYY-MM-DD HH:mm').format('DD-MM-YYYY');
+            r['proDate'] = time;
+            r["catName"] = getFolder.getCatgoryById(r.proCatID);
         }
-        console.log(rows);
         var allPros = {
             ManID: vm.manID,
             proCodes: rows

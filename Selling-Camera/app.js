@@ -37,7 +37,7 @@ var sessionStore = new MySQLStore({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: '',
+    password: 'msqlntk100397',
     database: 'camera',
     schema: {
         tableName: 'sessions',
