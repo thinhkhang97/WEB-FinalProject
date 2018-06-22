@@ -1,6 +1,13 @@
 var express = require('express');
 var handlebars = require('express-handlebars');
 var handlebars_sections = require('express-handlebars-sections');
+var body_parser = require('body-parser');
+var path = require('path');
+var wnumb = require('wnumb');
+
+var session = require('express-session');
+var MySQLStore = require('express-mysql-session')(session);
+
 var homeController = require('./controller/homeController');
 var categoryController = require('./controller/categoryController');
 var manufactureController = require('./controller/manufactureController');
@@ -9,20 +16,19 @@ var loginController=require('./controller/loginController');
 var searchController=require('./controller/searchController');
 var accountController=require('./controller/accountController');
 var handleLayoutVM = require('./middle-wares/handleLayout');
-var body_parser = require('body-parser');
-var path = require('path');
-
-
-var session = require('express-session');
-var MySQLStore = require('express-mysql-session')(session);
-
 var app = express();
 
 app.engine('hbs', handlebars({
     defaultLayout:'main',
     layoutsDir:'views/layouts/',
     helpers:{
-        section:handlebars_sections()
+        section:handlebars_sections(),
+        number_format: n => {
+            var nf = wnumb({
+                thousand: ','
+            });
+            return nf.to(n);
+        }
     }
 }));          
 app.set('view engine', 'hbs');

@@ -97,7 +97,7 @@
             <div class="center_content">
                 <div class="center_title_bar">Thông tin tài khoản</div>
                 <div class="account-profile">
-                    <form>
+                    <form method="POST" role="form">
                         <div class="form-group">
                             <label class="label_form" for="name">Họ tên </label>
                             <div class="input-wrap">
@@ -115,7 +115,7 @@
                         <div class="form-group ">
                             <label class="label_form" for="address" style="height">Địa chỉ</label>
                             <div class="input-wrap">
-                                <textarea class="form-control" id="address" name="address" cols="30" rows="10" placeholder="Nhập địa chỉ"></textarea>
+                                <textarea class="form-control" id="address" name="address" cols="30" rows="10" value="{{diachi}}"></textarea>
                                 <span class="help-block"></span>
                             </div>
                         </div>
