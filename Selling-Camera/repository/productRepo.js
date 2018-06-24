@@ -23,3 +23,7 @@ exports.loadTop10Hot = ()=>{
 exports.loadTop10View = ()=>{
     return db.load(`select * from product order by proView desc limit 10`)
 }
+
+exports.loadProductByID = id=>{
+    return db.load(`select * from product where proID = ${id}`);
+}

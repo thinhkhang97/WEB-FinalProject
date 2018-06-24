@@ -1,0 +1,44 @@
+<div class="center_title_bar">
+    {{proName}}</div>
+<div class="prod_box_big">
+    <div class="top_prod_box_big"></div>
+    <div class="center_prod_box_big">
+        <div class="product_img_big">
+            <a href="javascript:popImage('images/Mirr/Canon_m6.jpg','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]">
+                <img src="images/{{proCat}}/{{proCode}}.jpg" alt="" border="0" />
+            </a>
+        </div>
+        <div class="details_big_box">
+            <div class="product_title_big">Ảnh ngoài của máy ảnh {{proName}}</div>
+            <div class="specifications"> Tình trạng hàng:
+                {{#if proAvailable}}
+                <span class="blue">Trong kho</span>
+                {{else}}
+                <span class="price">Hết hàng</span>
+                {{/if}}
+                <br /> Bảo hành:
+                <span class="blue">24 tháng</span>
+                <br /> Lượt xem:
+                <span class="blue">{{proView}}</span>
+                <br /> Sản xuất:
+                <span class="blue">{{proMadeIn}}</span>
+                <br /> Loại:
+                <span class="blue">{{catName}}</span>
+                <br /> Nhà sản xuất:
+                <span class="blue">{{proMan}}</span>
+                <br /> Tốc độ chụp:
+                <span class="blue">{{proSpeed}}</span>
+                <br /> Kích thước màn hình:
+                <span class="blue">{{proSizeScreen}}</span>
+                <br /> Kích thước máy:
+                <span class="blue">{{proSize}}</span>
+                <br /> Phụ kiện đi kèm
+                <span class="blue">{{proSup}}</span>
+            </div>
+            <div class="prod_price">
+                <span class="price">{{proPrice}} VND</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_prod_box_big"></div>
+</div>
