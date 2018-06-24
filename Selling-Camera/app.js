@@ -37,7 +37,6 @@ app.engine('hbs', handlebars({
             });
             return nf.to(n);
         }
-        section:handlebars_sections()
     }
 }));          
 app.set('view engine', 'hbs');
@@ -52,7 +51,7 @@ var sessionStore = new MySQLStore({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'msqlntk100397',
+    password: '',
     database: 'camera',
     schema: {
         tableName: 'sessions',
