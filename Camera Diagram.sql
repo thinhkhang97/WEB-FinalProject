@@ -2,6 +2,7 @@ create database camera;
 use camera;
 create table category(
 catID int not null auto_increment,
+catCode nvarchar(50),
 catName nvarchar(50),
 catInfo nvarchar(50),
 primary key(catID)
@@ -43,10 +44,10 @@ manInfo text,
 primary key(manID)
 );
 
-insert into category values (0,'DSLR','Máy ảnh cơ kỹ thuật số');
-insert into category values (0,'Du lịch','Máy ảnh nhỏ gọn, dễ dàng mang theo khi đi du lịch');
-insert into category values (0,'Lấy liền','Máy ảnh có khả năng in hình chụp');
-insert into category values (0,'Mirrorless','Máy ảnh không gương lật');
+insert into category values (0,'DSLR','DSLR','Máy ảnh cơ kỹ thuật số');
+insert into category values (0,'DuLich','Du lịch','Máy ảnh nhỏ gọn, dễ dàng mang theo khi đi du lịch');
+insert into category values (0,'LayLien','Lấy liền','Máy ảnh có khả năng in hình chụp');
+insert into category values (0,'Mirr','Mirrorless','Máy ảnh không gương lật');
 
 insert into manufacture values(0,'Canon','Nhật Bản','Canon là một cái tên rất nổi tiếng về các sản phẩm hình ảnh và và quang học. Hãng có kinh doanh trên rất nhiều lĩnh vực, bao gồm máy ảnh, máy quay phim, máy photocopy, máy in và có cả thiết bị y tế. Trụ sở chính của tập đoàn này nằm ở thành phố Tokyo, Nhật. ');
 insert into manufacture values(0,'Sony','Nhật Bản','Công ty công nghiệp Sony gọi tắt là Sony, là một tập đoàn đa quốc gia của Nhật Bản, với trụ sở chính nằm tại Minato, Tokyo, Nhật Bản, và là tập đoàn điện tử đứng thứ 5 thế giới ');
