@@ -17,7 +17,6 @@ router.post('/', (req, res) => {
 
     var sql = `select * from users where username = '${user.username}' and passwords = '${user.password}'`;
     db.load(sql).then(rows=>{
-        console.log(rows.length);
         if (rows.length > 0) {
             req.session.isLogged = true;
             req.session.user = rows[0];
@@ -26,11 +25,11 @@ router.post('/', (req, res) => {
                 login:true
             }
     
-            var url = 'home';
+            var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
-            res.render(url, vm);
+            res.redirect(url);
         } else {
                 res.render('login/index');
         }
