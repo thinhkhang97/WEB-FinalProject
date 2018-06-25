@@ -29,12 +29,14 @@ router.post('/', (req, res) => {
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
+            console.log('[SUCCESS] Logged in');
+            console.log('[NOTIFY] Redirect to home');
             res.redirect(url);
         } else {
                 res.render('login/index');
         }
     }).catch(errs=>{
-        console.log('Khong the dang nhap');
+        console.log('[ERROR] Cannot log in');
     });
 
     

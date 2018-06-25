@@ -15,6 +15,8 @@ router.get('/',(req,res)=>{
             product["proCat"] = r1[0].catCode;
             product["proMan"] = r2[0].manName;
             product["catName"] = r1[0].catName;
+            console.log('[SUCCESS] Loaded all products');
+            console.log('[NOTIFY] Render to product details');
             res.render('product/detail',product);
         });
     });    

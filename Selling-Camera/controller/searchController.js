@@ -24,13 +24,13 @@ router.post('/', (req, res) => {
             else
                 r["catName"] = "Mirr"
         }
-        console.log(rows);
+        console.log('[SUCCESS] Searched');
         var vm = {
             proCodes:rows
         }
         res.render('search/index',vm);
     }).catch(err=>{
-        console.log("loi");
+        console.log('[ERROR] Cannot search');
     })
 });
 module.exports = router;

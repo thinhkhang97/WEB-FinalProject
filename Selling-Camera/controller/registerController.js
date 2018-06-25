@@ -23,10 +23,12 @@ router.post('/', (req, res) => {
 
         var sql = `insert into users(hoten,dthoai,diachi,username, passwords, email) values('${user.fullname}','${user.phone}','${user.address}','${user.username}', '${user.password}', '${user.email}')`;
     db.save(sql).then(row=>{
+        console.log('[SUCCESS] Registered');
         res.render('register/index',{
             login_ok:true
         });
     }).catch(err=>{
+        console.log('[ERROR] Not Registered');
         res.render('register/index',{
             login_false:true
         });

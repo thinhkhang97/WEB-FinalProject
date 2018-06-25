@@ -29,6 +29,8 @@ router.get('/',(req,res)=>{
             top10Hot:topHot,
             top10View:topView
         }
+        console.log('[SUCCESS] Loaded products');
+        console.log('[NOTIFY] Render to home');
         res.render('home/index',vm);
     });
 });

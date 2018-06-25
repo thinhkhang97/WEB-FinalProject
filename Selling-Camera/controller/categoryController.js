@@ -20,10 +20,11 @@ router.get('/', (req, res) => {
             catID: req.query.id,
             proCodes: rows
         }
+        console.log('[SUCCESS] Loaded category')
         res.render('category/index', allPros);
     }).catch(([err1, err2])=>{
-        if(err1) console.log('Error to load catCode');
-        if(err2) console.log('Error to load product')
+        if(err1) console.log('[ERROR] load catCode');
+        if(err2) console.log('[ERROR] load product')
     });
 });
 module.exports = router;

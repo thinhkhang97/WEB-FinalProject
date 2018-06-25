@@ -20,6 +20,8 @@ router.get('/', (req, res) => {
                 ManID: vm.manID,
                 proCodes: rows
             }
+            console.log('[SUCCESS] Loaded all product from manufacture');
+            console.log('[NOTIFY] Render to manufacture page');
             res.render('manufacture/index', allPros);
         });
     });
