@@ -1,17 +1,17 @@
 <div class="center_title_bar">
-    {{proName}}</div>
+    {{product.proName}}</div>
 <div class="prod_box_big">
     <div class="top_prod_box_big"></div>
     <div class="center_prod_box_big">
         <div class="product_img_big">
             <a href="javascript:popImage('images/Mirr/Canon_m6.jpg','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]">
-                <img src="images/{{proCat}}/{{proCode}}.jpg" alt="" border="0" />
+                <img src="images/{{product.proCat}}/{{product.proCode}}.jpg" alt="" border="0" />
             </a>
         </div>
         <div class="details_big_box">
             <div class="product_title_big">Ảnh ngoài của máy ảnh {{proName}}</div>
             <div class="specifications"> Tình trạng hàng:
-                {{#if proAvailable}}
+                {{#if product.proAvailable}}
                 <span class="blue">Trong kho</span>
                 {{else}}
                 <span class="price">Hết hàng</span>
@@ -19,26 +19,84 @@
                 <br /> Bảo hành:
                 <span class="blue">24 tháng</span>
                 <br /> Lượt xem:
-                <span class="blue">{{proView}}</span>
+                <span class="blue">{{product.proView}}</span>
                 <br /> Sản xuất:
-                <span class="blue">{{proMadeIn}}</span>
+                <span class="blue">{{product.proMadeIn}}</span>
                 <br /> Loại:
-                <span class="blue">{{catName}}</span>
+                <span class="blue">{{product.catName}}</span>
                 <br /> Nhà sản xuất:
-                <span class="blue">{{proMan}}</span>
+                <span class="blue">{{product.proMan}}</span>
                 <br /> Tốc độ chụp:
-                <span class="blue">{{proSpeed}}</span>
+                <span class="blue">{{product.proSpeed}}</span>
                 <br /> Kích thước màn hình:
-                <span class="blue">{{proSizeScreen}}</span>
+                <span class="blue">{{product.proSizeScreen}}</span>
                 <br /> Kích thước máy:
-                <span class="blue">{{proSize}}</span>
+                <span class="blue">{{product.proSize}}</span>
                 <br /> Phụ kiện đi kèm
-                <span class="blue">{{proSup}}</span>
+                <span class="blue">{{product.proSup}}</span>
             </div>
             <div class="prod_price">
-                <span class="price">{{proPrice}} VND</span>
+                <span class="price">{{product.proPrice}} VND</span>
             </div>
         </div>
     </div>
     <div class="bottom_prod_box_big"></div>
 </div>
+ <div class="center_title_bar">5 sản phẩm cùng loại</div>
+ {{#each prosSameCat}}
+<div class="prod_box">
+    <div class="top_prod_box"></div>
+    <div class="center_prod_box">
+        <div class="product_title">
+            <a href="/product?id={{proID}}">{{proName}}</a>
+        </div>
+        <div class="product_img">
+            <a href="/product?id={{proID}}">
+                <img src="images/{{catCode}}/{{proCode}}.jpg" alt="" border="0" width="50" height="80" />
+            </a>
+        </div>
+        <div class="prod_price">
+            <span class="price">{{proPrice}} VND</span>
+        </div>
+    </div>
+    <div class="bottom_prod_box"></div>
+    <div class="prod_details_tab">
+        <a href="#" title="Đã bán {{proQuatity}} sản phẩm">
+            <img src="images/favs.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a href="#" title="{{proView}} lượt xem">
+            <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a class="prod_details">{{proDate}}</a>
+    </div>
+</div>
+{{/each}}
+ <div class="center_title_bar">5 sản phẩm cùng nhà sản xuất</div>
+ {{#each prosSameMan}}
+<div class="prod_box">
+    <div class="top_prod_box"></div>
+    <div class="center_prod_box">
+        <div class="product_title">
+            <a href="/product?id={{proID}}">{{proName}}</a>
+        </div>
+        <div class="product_img">
+            <a href="/product?id={{proID}}">
+                <img src="images/{{catCode}}/{{proCode}}.jpg" alt="" border="0" width="50" height="80" />
+            </a>
+        </div>
+        <div class="prod_price">
+            <span class="price">{{proPrice}} VND</span>
+        </div>
+    </div>
+    <div class="bottom_prod_box"></div>
+    <div class="prod_details_tab">
+        <a href="#" title="Đã bán {{proQuatity}} sản phẩm">
+            <img src="images/favs.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a href="#" title="{{proView}} lượt xem">
+            <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
+        </a>
+        <a class="prod_details">{{proDate}}</a>
+    </div>
+</div>
+{{/each}}

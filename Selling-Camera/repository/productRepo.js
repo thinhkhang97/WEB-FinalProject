@@ -27,3 +27,11 @@ exports.loadTop10View = ()=>{
 exports.loadProductByID = id=>{
     return db.load(`select * from product where proID = ${id}`);
 }
+
+exports.load5ProductByCatID = catID=>{
+    return db.load(`select * from product join category on proCatID = catID where proCatID=${catID} order by proView desc limit 5`);
+}
+
+exports.load5ProductByManID = manID=>{
+    return db.load(`select * from product join category on proCatID = catID where proManID=${manID} order by proView desc limit 5`);
+}
