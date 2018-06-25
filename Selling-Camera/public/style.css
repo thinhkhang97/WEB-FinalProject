@@ -551,16 +551,17 @@ padding:0px 0 0 75px;
 }
 .form_row{
 width:335px;
+height: 42px;
 clear:both;
 padding:10px 0 10px 0;
 _padding:5px 0 5px 0;
 color:#a53d17;
 }
 label.contact{
-width:75px;
+width:200px;
 float:left;
 font-size:12px;
-text-align:right;
+text-align:left;
 padding:4px 5px 0 0;
 color: #333333;
 }
@@ -625,4 +626,20 @@ width:200px;
 text-align:center;
 color:#666666;
 padding:10px 0 0 60px;
+}
+
+.button {
+    background-color: #7BBCC7;
+    border: none;
+	color: white;
+	float: left;
+    padding: 7px 15px;
+    text-align: center;
+	text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-submit {
+	font-size: 12px;
 }

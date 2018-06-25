@@ -34,6 +34,8 @@ router.post('/', (req, res) => {
         } else {
                 res.render('login/index');
         }
+    }).catch(errs=>{
+        console.log('Khong the dang nhap');
     });
 
     

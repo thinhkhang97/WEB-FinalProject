@@ -1,5 +1,10 @@
 <div class="center_content">
     <div class="center_title_bar">Đăng kí</div>
+    {{#if login_ok}}
+    <div class="center_title_bar">Đăng kí thành công</div>
+    {{/if}} {{#if login_false}}
+    <div class="center_title_bar">Đăng kí không thành công</div>
+    {{/if}}
     <div class="prod_box_big">
         <div class="top_prod_box_big"></div>
         <div class="center_prod_box_big">
@@ -7,9 +12,27 @@
                 <div class="contact_form">
                     <div class="form_row">
                         <label class="contact">
+                            <strong>Họ tên:</strong>
+                        </label>
+                        <input name="fullname" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Số điện thoại liên hệ:</strong>
+                        </label>
+                        <input name="phone" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Địa chỉ liên hệ:</strong>
+                        </label>
+                        <input name="address" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
                             <strong>Tên người dùng:</strong>
                         </label>
-                        <input name="username" type="text" class="contact_input" />
+                        <input name="username" type="text" class="contact_input" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -17,7 +40,7 @@
                                 Mật khẩu:
                             </strong>
                         </label>
-                        <input name="password" class="contact_input" type="password" />
+                        <input name="password" class="contact_input" type="password" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -25,7 +48,7 @@
                                 Nhập lại mật khẩu:
                             </strong>
                         </label>
-                        <input name="confirmpassword" class="contact_input" type="password" />
+                        <input name="confirmpassword" class="contact_input" type="password" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -33,9 +56,11 @@
                                 Email:
                             </strong>
                         </label>
-                        <input name="email" type="text" class="contact_input" />
+                        <input name="email" type="text" class="contact_input" required/>
                     </div>
-                    <button type="submit">Đăng kí</button>
+                    <div style="height:50px; clear:both">
+                        <button type="submit" class="button button-submit">Đăng kí</button>                        
+                    </div>
                 </div>
             </form>
         </div>
