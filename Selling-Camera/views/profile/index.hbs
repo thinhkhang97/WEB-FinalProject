@@ -15,38 +15,38 @@
 <div class="center_content">
     <div class="center_title_bar">Thông tin tài khoản</div>
     <div class="account-profile">
-        <form>
+        <form  action="" method="POST" role="form" onsubmit="return validate();">
             <div class="form-group">
                 <label class="label_form" for="name">Họ tên </label>
                 <div class="input-wrap">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Họ tên">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Họ tên"  value="{{userdetail.hoten}}">
                     <span class="help-block"></span>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="label_form" for="phone_number">Số điện thoại</label>
                 <div class="input-wrap">
-                    <input type="text" class="form-control" name="phone_number" id="phone_number">
+                    <input type="text" class="form-control" name="phone_number" id="phone_number"  value="{{userdetail.dthoai}}">
                     <span class="help-block"></span>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="label_form" for="address" style="height">Địa chỉ</label>
                 <div class="input-wrap">
-                    <textarea class="form-control" id="address" name="address" cols="30" rows="10" placeholder="Nhập địa chỉ"></textarea>
+                    <textarea class="form-control" id="address" name="address" cols="30" rows="10" placeholder="Nhập địa chỉ" value="{{userdetail.diachi}}"></textarea>
                     <span class="help-block"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="label_form" for="email">Email</label>
                 <div class="input-wrap">
-                    <input type="email" value="nhathai74@gmail.com" class="form-control" name="email" id="email" placeholder="Email" disabled>
+                    <input type="email" value="{{userdetail.email}}" class="form-control" name="email" id="email" placeholder="Email" disabled>
                 </div>
             </div>
             <div class="form-group">
                 <label class="label_form" for="gender">Giới tính</label>
                 <div class="input-wrap">
-                    <input type="radio" name="gender" id="gender_male" value="Nam" checked>Nam
+                    <input type="radio" name="gender" id="gender_male" value="Nam">Nam
                     <input type="radio" name="gender" id="gender_female" value="Nữ">Nữ
                     <span class="help-block"></span>
                 </div>
@@ -56,7 +56,7 @@
                 </label>
                 <div class="input-wrap">
                     <div id="birthday-picker" class="birthday-picker">
-                        <input class="birth-control" type="date" name="" min="1970-01-01" min="2012-12-31" style="width: 90%;" />
+                        <input class="birth-control" type="date" name="" min="1970-01-01" min="2012-12-31" style="width: 90%;" value="{{userdetail.ngaysinh}}"/>
                     </div>
                     <span class="help-block"></span>
                 </div>

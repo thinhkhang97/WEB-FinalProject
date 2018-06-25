@@ -1,16 +1,22 @@
 var express = require('express');
-var userRepo = require('../repository/accountRepo');
+var accountRepo = require('../repository/accountRepo');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    accountRepo.loadAll().then(rows => {
+    res.redirect('account/profile');
+});
+
+router.get('/profile', (req, res) => {
+    console.log(req.session.users);
+    accountRepo.loadAccount(req.session.users.id).then(rows => {
         var vm = {
-            users: c
+            userdetail: rows[0],
+            //user: req.session.user
         };
         res.render('profile/index', vm);
     });
 });
-router.post('/', (req, res) => {
+router.post('/profile', (req, res) => {
     accountRepo.update(req.body).then(value => {
         res.redirect('/profile');
     });
