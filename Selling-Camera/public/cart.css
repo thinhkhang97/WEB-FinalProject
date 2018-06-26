@@ -25,6 +25,7 @@
     width: 73%;
     margin-left: 0;
     margin-right: 0;
+    background-color: #fffacd;
 }
 
 .cart-col-2 {
@@ -55,10 +56,10 @@
 }
 
 .info-item {
-    width: 290px;
+    width: 260px;
     padding-top: 10px;
     padding-right: 0px;
-    padding-left: 15px;
+    padding-left: 10px;
     float: left;
 }
 
@@ -89,19 +90,23 @@ a:hover {
     font-size: 13px;
     margin-bottom: 12px;
 }
-
+.btn{
+    cursor: pointer;
+    border-radius: 4px;
+}
 .btn-form {
     border: none;
     border-radius: 4px;
-    color: #4a4a4a;
+    color: #fff;
     font-size: 14px;
-    background-color: lightblue;
+    background-color: #337ab7;
+    cursor: pointer;
 }
 
 .price {
     float: left;
-    width: 150px;
-    padding-right: 15px;
+    width: 130px;
+    padding-right: 10px;
 }
 
 .price-font {
@@ -130,7 +135,7 @@ a:hover {
 }
 
 .block-num {
-    width: 30px;
+    width: 90px;
     float: right;
     padding-top: 10px;
 }
@@ -171,7 +176,8 @@ a:hover {
     border-radius: 4px;
     background-color: #ea000f;
     border-color: #c2000c;
-    width: 100%
+    width: 100%;
+    cursor: pointer;
 }
 .address-class{
     font-size: 14px;

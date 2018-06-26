@@ -17,3 +17,12 @@ exports.remove = (cart, proId) => {
         }
     }
 }
+
+exports.change = (cart, item) => {
+    for (i = cart.length - 1; i >= 0; i--) {
+        if (cart[i].ProId === item.ProId) {
+            cart[i].Quantity = item.Quantity;
+            return;
+        }
+    }
+}
