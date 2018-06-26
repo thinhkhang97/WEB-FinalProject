@@ -60,7 +60,7 @@ label {
     width: 380px;
     margin: 0;
 }
-.input-wrap{
+.input-wrap  .btn-send-otp {
     border-radius: 0 3px 3px 0;
     color: #4a4a4a;
     font-size: 13px;
@@ -78,7 +78,7 @@ input[placeholder] {
 
 .form-control {
     border-radius: 3px;
-    width: 49%;
+    width: 80%;
     height: 5px;
     border: 1px solid #ddd;
     color: #333;
@@ -95,7 +95,7 @@ input[placeholder] {
 }
 .birth-control{
     border-radius: 3px;
-    width: 30%;
+    width: 85%;
     height: 28px;
     border: 1px solid #ddd;
     color: #333;

@@ -1,3 +1,29 @@
+{{#section 'title'}} Tài khoản của tôi {{/section}} {{#section 'js'}}
+<script type="text/javascript">
+    $("input[name=gender][value='{{userdetail.gioitinh}}']").prop("checked", true);
+    var validate = function () {
+        var a = document.getElementById('change_pass');
+        if (a.checked == true) {
+            if ($('#new_password').val().length === 0) {
+                alert('Lỗi mật khẩu');
+                return false;
+            }
+            if ($('#new_password').val() !== $('#re_new_password').val()) {
+                alert('Mật khẩu mới không trùng khớp');
+                return false;
+            }
+        }
+
+        return true;
+    }
+    function passCheck() {
+        var a = document.getElementById('change_pass');
+        if (a.checked == true)
+            document.getElementById('passgroup').setAttribute('style', 'display:block');
+        else
+            document.getElementById('passgroup').setAttribute('style', 'display:none');
+    }
+</script> {{/section}}
 <div class="left_content">
     <div class="title_box">Quản lý tài khoản</div>
     <ul class="left_menu">
@@ -15,34 +41,15 @@
 <div class="center_content">
     <div class="center_title_bar">Thông tin tài khoản</div>
     <div class="account-profile">
-        <form  action="" method="POST" role="form" onsubmit="return validate();">
+        <form action="" method="POST" role="form" onsubmit="return validate();">
             <div class="form-group">
                 <label class="label_form" for="name">Họ tên </label>
                 <div class="input-wrap">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Họ tên"  value="{{userdetail.hoten}}">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Họ tên" value="{{userdetail.hoten}}">
                     <span class="help-block"></span>
                 </div>
             </div>
-            <div class="form-group ">
-                <label class="label_form" for="phone_number">Số điện thoại</label>
-                <div class="input-wrap">
-                    <input type="text" class="form-control" name="phone_number" id="phone_number"  value="{{userdetail.dthoai}}">
-                    <span class="help-block"></span>
-                </div>
-            </div>
-            <div class="form-group ">
-                <label class="label_form" for="address" style="height">Địa chỉ</label>
-                <div class="input-wrap">
-                    <textarea class="form-control" id="address" name="address" cols="30" rows="10" placeholder="Nhập địa chỉ" value="{{userdetail.diachi}}"></textarea>
-                    <span class="help-block"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="label_form" for="email">Email</label>
-                <div class="input-wrap">
-                    <input type="email" value="{{userdetail.email}}" class="form-control" name="email" id="email" placeholder="Email" disabled>
-                </div>
-            </div>
+
             <div class="form-group">
                 <label class="label_form" for="gender">Giới tính</label>
                 <div class="input-wrap">
@@ -56,9 +63,29 @@
                 </label>
                 <div class="input-wrap">
                     <div id="birthday-picker" class="birthday-picker">
-                        <input class="birth-control" type="date" name="" min="1970-01-01" min="2012-12-31" style="width: 90%;" value="{{userdetail.ngaysinh}}"/>
+                        <input class="birth-control" type="date" name="dob" min="1970-01-01" min="2012-12-31" value="{{userdetail.ngaysinh}}" />
                     </div>
                     <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="label_form" for="phone_number">Số điện thoại</label>
+                <div class="input-wrap">
+                    <input type="text" class="form-control" name="phone_number" id="phone_number" value="{{userdetail.dthoai}}">
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label class="label_form" for="address" style="height">Địa chỉ</label>
+                <div class="input-wrap">
+                    <textarea class="form-control" id="address" name="address" cols="30" rows="10" placeholder="Nhập địa chỉ" style="height:105px;">{{userdetail.diachi}}</textarea>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label_form" for="email">Email</label>
+                <div class="input-wrap">
+                    <input type="email" value="{{userdetail.email}}" class="form-control" name="email" id="email" placeholder="Email" disabled>
                 </div>
             </div>
             <div class="form-group">
@@ -69,13 +96,6 @@
                 </div>
             </div>
             <div class="password-group" id="passgroup">
-                <div class="form-group">
-                    <label class="control-label" for="old_password">Mật khẩu cũ</label>
-                    <div class="input-wrap">
-                        <input type="password" name="old_password" class="form-control" id="old_password" value="" autocomplete="off" placeholder="Nhập mật khẩu cũ">
-                        <span class="help-block"></span>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="control-label" for="new-password">Mật khẩu mới</label>
                     <div class="input-wrap">
@@ -108,7 +128,7 @@
         </div>
         <div class="product_img">
             <a href="details.html">
-                <img name="new_cam_img" src="images/p2.jpg" alt="" border="0" />
+                <img name="new_cam_img" src="../images/p2.jpg" alt="" border="0" />
             </a>
         </div>
         <div class="prod_price">
@@ -133,7 +153,7 @@
     </ul>
     <div class="banner_adds">
         <a href="#">
-            <img src="images/bann1.jpg" alt="" border="0" />
+            <img src="../images/bann1.jpg" alt="" border="0" />
         </a>
     </div>
 </div>

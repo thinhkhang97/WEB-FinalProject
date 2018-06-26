@@ -5,9 +5,10 @@
     <title>Thế giới máy ảnh</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
-    <link rel="stylesheet" type="text/css" href="profile.css">
-    <link rel="stylesheet" type="text/css" href="order.css">
-    <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="../profile.css">
+    <link rel="stylesheet" type="text/css" href="../order.css">
+    <link rel="stylesheet" type="text/css" href="../cart.css"> 
+    {{{_sections.css}}}
     <!--[if IE 6]>
         <link rel="stylesheet" type="text/css" href="iecss.css" />
         <![endif]-->
@@ -25,22 +26,22 @@
                     <a href="#">Tìm kiếm nâng cao</a>
                 </div>
                 <input type="text" class="search_input" name="search" />
-                <input type="image" src="images/search.gif" class="search_bt" />
+                <input type="image" src="../images/search.gif" class="search_bt" />
             </div>
         </div>
         <div id="header">
             <div id="logo">
                 <a href="#">
-                    <img src="images/logo.png" alt="" border="0" width="237" height="140" />
+                    <img src="../images/logo.png" alt="" border="0" width="237" height="140" />
                 </a>
             </div>
             <div class="oferte_content">
                 <div class="top_divider">
-                    <img src="images/header_divider.png" alt="" width="1" height="164" />
+                    <img src="../images/header_divider.png" alt="" width="1" height="164" />
                 </div>
                 <div class="oferta">
                     <div class="oferta_content">
-                        <img name="header-img" src="images/Canon_m6.jpg" width="94" height="92" alt="" border="0" class="oferta_img" />
+                        <img name="header-img" src="../images/Canon_m6.jpg" width="94" height="92" alt="" border="0" class="oferta_img" />
                         <div class="oferta_details">
                             <div class="oferta_title">Canon_m6</div>
                             <div class="oferta_text"> Canon EOS M6 là một máy ảnh kỹ thuật số không gương lật 24MP APS-C nhỏ gọn với các nút điều khiển
@@ -50,7 +51,7 @@
                     </div>
                 </div>
                 <div class="top_divider">
-                    <img src="images/header_divider.png" alt="" width="1" height="164" />
+                    <img src="../images/header_divider.png" alt="" width="1" height="164" />
                 </div>
             </div>
             <!-- end of oferte_content-->
@@ -90,18 +91,18 @@
         <!-- End of right content -->
         <div class="footer">
             <div class="left_footer">
-                <img src="images/footer_logo.png" alt="" width="170" height="49" /> </div>
+                <img src="../images/footer_logo.png" alt="" width="170" height="49" /> </div>
             <div class="center_footer"> Bản quyền năm 2018
                 <br />
                 <a href="http://csscreme.com">
-                    <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+                    <img src="../images/csscreme.jpg" alt="csscreme" border="0" />
                 </a>
                 <br />
                 <a href="http://csscreme.com">
-                    <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+                    <img src="../images/csscreme.jpg" alt="csscreme" border="0" />
                 </a>
                 <br />
-                <img src="images/payment.gif" alt="" /> </div>
+                <img src="../images/payment.gif" alt="" /> </div>
             <div class="right_footer">
                 <a href="#">Trang chủ</a>
                 <a href="#">Về chúng tôi</a>
@@ -111,15 +112,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        function passCheck() {
-            var a = document.getElementById('change_pass');
-            if (a.checked == true)
-                document.getElementById('passgroup').setAttribute('style', 'display:block');
-            else
-                document.getElementById('passgroup').setAttribute('style', 'display:none');
-        }
-    </script>
+    <script type="text/javascript" src="../jquery-3.1.1.min.js"></script> {{{_sections.js}}}
 </body>
 
 </html>
