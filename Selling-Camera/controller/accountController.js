@@ -9,15 +9,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-    console.log(req.session.users);
-    accountRepo.loadAccount(req.session.users.id).then(rows => {
+    accountRepo.loadAccount(req.session.users.ID).then(rows => {
         var vm = {
             userdetail: rows[0],
             layout: 'profileLayout.handlebars',
 
             //user: req.session.user
         };
-        console.log(vm.userdetail);
 
         vm.userdetail.ngaysinh = moment(vm.userdetail.ngaysinh).format('YYYY-MM-DD');
         res.render('profile/index', vm);
@@ -26,12 +24,9 @@ router.get('/profile', (req, res) => {
 router.post('/profile', (req, res) => {
     var dob = moment(req.body.dob).format('YYYY-MM-DDTHH:mm');
 
-    console.log(req.body.dob);
-    console.log(dob);
-    console.log(req.body);
     if (req.body.new_password != '') {
         var user = {
-            ID: req.session.users.id,
+            ID: req.session.users.ID,
             passwords: SHA256(req.body.new_password).toString(),
             hoten: req.body.name,
             gioitinh: req.body.gender,
@@ -42,7 +37,7 @@ router.post('/profile', (req, res) => {
         };
     } else {
         var user = {
-            ID: req.session.users.id,
+            ID: req.session.users.ID,
             passwords: req.session.users.passwords,
             hoten: req.body.name,
             gioitinh: req.body.gender,
@@ -52,8 +47,6 @@ router.post('/profile', (req, res) => {
             //permission: 0
         };
     }
-    console.log(user);
-    console.log(req.headers.referer);
     accountRepo.update(user).then(value => {
         res.redirect(req.headers.referer);
     });
