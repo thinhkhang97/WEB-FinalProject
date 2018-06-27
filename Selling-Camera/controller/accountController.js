@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-    accountRepo.loadAccount(req.session.users.ID).then(rows => {
+    accountRepo.loadAccount(req.session.user.ID).then(rows => {
         var vm = {
             userdetail: rows[0],
             layout: 'profileLayout.handlebars',
@@ -19,6 +19,8 @@ router.get('/profile', (req, res) => {
 
         vm.userdetail.ngaysinh = moment(vm.userdetail.ngaysinh).format('YYYY-MM-DD');
         res.render('profile/index', vm);
+    }).catch(err => {
+        res.redirect('login/index');
     });
 });
 router.post('/profile', (req, res) => {
@@ -26,7 +28,7 @@ router.post('/profile', (req, res) => {
 
     if (req.body.new_password != '') {
         var user = {
-            ID: req.session.users.ID,
+            ID: req.session.user.ID,
             passwords: SHA256(req.body.new_password).toString(),
             hoten: req.body.name,
             gioitinh: req.body.gender,
@@ -37,8 +39,8 @@ router.post('/profile', (req, res) => {
         };
     } else {
         var user = {
-            ID: req.session.users.ID,
-            passwords: req.session.users.passwords,
+            ID: req.session.user.ID,
+            passwords: req.session.user.passwords,
             hoten: req.body.name,
             gioitinh: req.body.gender,
             ngaysinh: dob,
