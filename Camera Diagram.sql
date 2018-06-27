@@ -1,4 +1,4 @@
-create database camera;
+﻿create database camera;
 use camera;
 create table category(
 catID int not null auto_increment,
@@ -25,7 +25,7 @@ proName nvarchar(50),
 proPrice int,
 proView int,
 proAvailable bool,
-proQuatity int,
+proQuantity int,
 proCatID int,
 proManID int,
 proSpeed float,

@@ -17,7 +17,9 @@ var searchController=require('./controller/searchController');
 var accountController=require('./controller/accountController');
 var productController = require('./controller/productController');
 var logoutController = require('./controller/logoutController');
-var handleLayoutVM = require('./middle-wares/handleLayout');
+var cartController = require('./controller/cartController');
+var handleLayoutVM = require('./middle-wares/handleLayout'),
+    restrict = require('./middle-wares/restrict');
 var body_parser = require('body-parser');
 var path = require('path');
 
@@ -78,8 +80,9 @@ app.use('/register',registerController);
 app.use('/login',loginController);
 app.use('/logout',logoutController);
 app.use('/search',searchController);
-app.use('/account', accountController);
+app.use('/account', restrict, accountController);
 app.use('/product',productController);
+app.use('/cart', restrict, cartController);
 app.listen(3000,(err)=>{
     if(err) throw err;
     console.log('server is running at port 3000');
