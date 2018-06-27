@@ -56,7 +56,7 @@
 }
 
 .info-item {
-    width: 260px;
+    width: 256px;
     padding-top: 10px;
     padding-right: 0px;
     padding-left: 10px;
@@ -135,7 +135,7 @@ a:hover {
 }
 
 .block-num {
-    width: 90px;
+    width: 94px;
     float: right;
     padding-top: 10px;
 }

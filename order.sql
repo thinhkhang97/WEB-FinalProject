@@ -14,6 +14,7 @@ CREATE TABLE orders (
   OrderID int unsigned NOT NULL AUTO_INCREMENT,
   OrderDate datetime NOT NULL,
   UserID int NOT NULL,
+  Ship int NOT NULL,
   Total bigint(20) NOT NULL,
   PRIMARY KEY (OrderID)
 );
