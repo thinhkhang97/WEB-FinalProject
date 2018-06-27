@@ -17,7 +17,7 @@ exports.loadTop10Newest = ()=>{
 }
 
 exports.loadTop10Hot = ()=>{
-    return db.load(`select * from product order by proQuantity desc limit 10`)
+    return db.load(`select * from product order by proQuatity desc limit 10`)
 }
 
 exports.loadTop10View = ()=>{
