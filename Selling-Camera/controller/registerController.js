@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
             email: req.body.email
         };
 
-        var sql = `insert into users(hoten,dthoai,diachi,username, passwords, email) values('${user.fullname}','${user.phone}','${user.address}','${user.username}', '${user.password}', '${user.email}')`;
+        var sql = `insert into users(hoten,dthoai,diachi,username, passwords, role, email) values('${user.fullname}','${user.phone}','${user.address}','${user.username}', '${user.password}','customer', '${user.email}')`;
     db.save(sql).then(row=>{
         console.log('[SUCCESS] Registered');
         res.render('register/index',{

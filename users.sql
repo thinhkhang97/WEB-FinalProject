@@ -9,5 +9,6 @@ diachi nvarchar(100) not null,
 email nvarchar(30),
 username nvarchar(30) not null,
 passwords nvarchar(1000) not null,
+role nvarchar(20),
 primary key(ID)
 );
