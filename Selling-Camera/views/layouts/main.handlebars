@@ -115,27 +115,30 @@
               <li class="divider"></li>
               <li>
                 <a href="/search" class="nav2">Tìm kiếm</a>
-              </li>
-              <li class="divider"></li>
+              </li>       
               {{#if layoutVM.isLogged}} {{else}}
+              <li class="divider"></li>
               <li>
                 <a href="login" class="nav3">Đăng nhập</a>
               </li>
               {{/if}}
-              <li class="divider"></li>
+              
               {{#if layoutVM.isLogged}}
+              <li class="divider"></li>
               <li>
                 <a href="/account" class="nav3">Tài khoản của tôi</a>
               </li>
               {{/if}}
-              <li class="divider"></li>
+              
               {{#if layoutVM.isLogged}}
+              <li class="divider"></li>
               <li>
                 <a href="/logout" class="nav3">Đăng xuất</a>
               </li>
               {{/if}}
-              <li class="divider"></li>
+             
               {{#if layoutVM.isLogged}} {{else}}
+               <li class="divider"></li>
               <li>
                 <a href="/register" class="nav4">Đăng kí</a>
               </li>

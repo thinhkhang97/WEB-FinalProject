@@ -14,3 +14,11 @@ exports.getCatgoryByCatName = name =>{
 exports.getAllCatgories = () =>{
     return db.load(`select * from category`);
 }
+
+exports.insertNewCatgory = c =>{
+    return db.save(`insert into category (catCode,catName,catInfo) values ('${c.catCode}','${c.catName}','${c.catInfo}')`);
+}
+
+exports.deleteCategory = c=>{
+    return db.save(`delete from category where catID = ${c.catID}`);
+}

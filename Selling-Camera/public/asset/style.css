@@ -299,19 +299,6 @@ ul.left_menu li.even a:hover, ul.left_menu li.odd a:hover{
 background:url(images/checked.png) no-repeat left #7bbcc7; color:#FFFFFF;background-position:5px 5px;
 }
 
-.a2{
-    width:16px;height:16px;display:block;
-    background:url(images/delete.png) no-repeat;
-    text-decoration:none;
-    float: left;
-}
-.a3{
-    width:16px;height:16px;display:block;
-    background:url(images/mechanics.png) no-repeat;
-    text-decoration:none;
-    float: right;
-}
-
 .border_box{
 width:194px;
 height:auto;

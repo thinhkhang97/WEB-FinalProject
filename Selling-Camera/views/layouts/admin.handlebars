@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Thế giới máy ảnh</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="iecss.css" />
+    <![endif]-->
+</head>
+
+<body>
+    <div id="main_container">
+        <div id="header">
+            <div id="logo">
+                <a href="#">
+                    <img src="../images/logo.png" alt="" border="0" width="237" height="140" />
+                </a>
+            </div>
+            <div class="oferte_content">
+                <div class="top_divider">
+                    <img src="../images/header_divider.png" alt="" width="1" height="164" />
+                </div>
+                <div class="top_divider">
+                    <img src="../images/header_divider.png" alt="" width="1" height="164" />
+                </div>
+            </div>
+            <!-- end of oferte_content-->
+        </div>
+        <div id="main_content">
+            <div id="menu_tab">
+                <div class="left_menu_corner"></div>
+                <ul class="menu">
+                    {{#if layoutVM.isLogged}}
+                    <li>
+                        <a href="/logout" class="nav3">Đăng xuất</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <div class="right_menu_corner"></div>
+            </div>
+            <!-- end of menu tab -->
+            <div class="left_content">
+                <div class="title_box">Các danh mục</div>
+                <ul class="left_menu">
+                    <li class="odd">
+                        <a href="/adminPro">Danh sách sản phẩm</a>
+                    </li>
+                    <li class="even">
+                        <a href="/adminMan">Danh sách nhà sản xuất</a>
+                    </li>
+                    <li class="odd">
+                        <a href="/adminCat">Danh sách loại sản phẩm</a>
+                    </li>
+                    <li class="even">
+                        <a href="/adminUser">Danh sách người dùng</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of left content -->
+            <div class="center_content2">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
