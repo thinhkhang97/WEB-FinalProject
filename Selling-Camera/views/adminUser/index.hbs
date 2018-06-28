@@ -40,6 +40,7 @@
         <th>Email</th>
         <th>Tên đăng nhập</th>
         <th>Phân quyền</th>
+        <th>&nbsp;</th>
     </tr>
     {{#each catgory}}
     <tr>
@@ -52,6 +53,10 @@
         <td>{{email}}</td>
         <td>{{username}}</td>
         <td>{{role}}</td>
+        <td>
+            <a href="adminUser/delete?Id={{ID}}" class="a2" />
+            <a href="adminUser/edit?Id={{ID}}" class="a3"/>
+        </td>
     </tr>
     {{/each}}
 </table>

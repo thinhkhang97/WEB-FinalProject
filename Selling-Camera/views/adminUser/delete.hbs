@@ -1,0 +1,54 @@
+<div class="center_content2">
+    <div class="center_title_bar">Xem kĩ thông tin trước khi xóa</div>
+    {{#if _ok}}
+    <div class="center_title_bar">Xóa thành công</div>
+    {{/if}} {{#if _false}}
+    <div class="center_title_bar">Xóa không thành công</div>
+    {{/if}}
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <form action="" method="POST">
+                <div class="contact_form">
+                    <div class="form_row">
+                        <input name="ID" type="text" hidden class="contact_input" value="{{ID}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Họ và tên:</strong>
+                        </label>
+                        <input name="hoten" type="text" readonly class="contact_input" value="{{hoten}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Điện thoại:</strong>
+                        </label>
+                        <input name="dthoai" type="text" readonly class="contact_input" value="{{dthoai}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Địa chỉ:</strong>
+                        </label>
+                        <input name="diachi" type="text" readonly class="contact_input" value="{{diachi}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Email:</strong>
+                        </label>
+                        <input name="email" type="text" readonly class="contact_input" value="{{email}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Username:</strong>
+                        </label>
+                        <input name="username" type="text" readonly class="contact_input" value="{{username}}"/>
+                    </div>
+                    <div style="height:50px; clear:both">
+                        <button type="submit" class="button button-submit">Xóa</button>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
