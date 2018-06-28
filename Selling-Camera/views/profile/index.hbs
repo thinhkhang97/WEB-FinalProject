@@ -32,7 +32,7 @@
                 <span class="glyphicon-user" aria-hidden="true" style="color: red"></span>Thông tin tài khoản</a>
         </li>
         <li class="profile">
-            <a href="#">
+            <a href="/account/order">
                 <span class="glyphicon-shopping-cart" aria-hidden="true" style="color: red"></span>Quản lý đơn hàng</a>
         </li>
     </ul>
@@ -122,7 +122,6 @@
 </div>
 <!-- end of center content -->
 <div class="right_content">
-        {{#if layoutVM.isLogged}}
       <div class="shopping_cart">
         <div class="cart_title">Giỏ hàng</div>
         <div class="cart_details"> 2 sản phẩm
@@ -132,11 +131,10 @@
         </div>
         <div class="cart_icon">
           <a href="/cart" title="Checkout">
-            <img src="images/shoppingcart.png" alt="" width="48" height="48" border="0">
+            <img src="../images/shoppingcart.png" alt="" width="48" height="48" border="0">
           </a>
         </div>
       </div>
-      {{/if}}
     <div class="title_box">Có gì mới?</div>
     <div class="border_box">
         <div class="product_title">
