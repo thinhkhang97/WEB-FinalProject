@@ -17,6 +17,9 @@
     </div>
     <div class="bottom_prod_box"></div>
     <div class="prod_details_tab">
+        {{#if ../layoutVM.isLogged}}
+        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        {{/if}}
         <a href="#" title="Đã bán {{proQuatity}} sản phẩm">
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
         </a>

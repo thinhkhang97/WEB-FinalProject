@@ -118,6 +118,8 @@
               </li>       
               {{#if layoutVM.isLogged}} {{else}}
               <li class="divider"></li>
+          {{#if layoutVM.isLogged}}
+          {{else}}
               <li>
                 <a href="login" class="nav3">Đăng nhập</a>
               </li>
@@ -130,15 +132,16 @@
               </li>
               {{/if}}
               
-              {{#if layoutVM.isLogged}}
+          {{#if layoutVM.isLogged}}
               <li class="divider"></li>
               <li>
                 <a href="/logout" class="nav3">Đăng xuất</a>
               </li>
-              {{/if}}
+          {{/if}}
              
               {{#if layoutVM.isLogged}} {{else}}
                <li class="divider"></li>
+          {{#if layoutVM.isLogged}} {{else}}
               <li>
                 <a href="/register" class="nav4">Đăng kí</a>
               </li>
@@ -194,6 +197,21 @@
         </div>
         <!-- End of center content -->
         <div class="right_content">
+    {{#if layoutVM.isLogged}}
+      <div class="shopping_cart">
+        <div class="cart_title">Giỏ hàng</div>
+        <div class="cart_details"> 2 sản phẩm
+          <br>
+          <br>
+          <span class="border_cart"></span>
+        </div>
+        <div class="cart_icon">
+          <a href="/cart" title="Checkout">
+            <img src="images/shoppingcart.png" alt="" width="48" height="48" border="0">
+          </a>
+        </div>
+      </div>
+      {{/if}}
           <div class="title_box">Có gì mới?</div>
           <div class="border_box">
             <div class="product_title">
@@ -232,26 +250,26 @@
         </div>
         <!-- End of right content -->
         <div class="footer">
-          <div class="left_footer">
-            <img src="images/footer_logo.png" alt="" width="170" height="49" /> </div>
-          <div class="center_footer"> Bản quyền năm 2018
-            <br />
-            <a href="http://csscreme.com">
-              <img src="images/csscreme.jpg" alt="csscreme" border="0" />
-            </a>
-            <br />
-            <a href="http://csscreme.com">
-              <img src="images/csscreme.jpg" alt="csscreme" border="0" />
-            </a>
-            <br />
-            <img src="images/payment.gif" alt="" /> </div>
-          <div class="right_footer">
-            <a href="#">Trang chủ</a>
-            <a href="#">Về chúng tôi</a>
-            <a href="#">sitemap</a>
-            <a href="#">rss</a>
+      <div class="left_footer">
+        <img src="images/footer_logo.png" alt="" width="170" height="49" /> </div>
+      <div class="center_footer"> Bản quyền năm 2018
+        <br />
+        <a href="http://csscreme.com">
+          <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+        </a>
+        <br />
+        <a href="http://csscreme.com">
+          <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+        </a>
+        <br />
+        <img src="images/payment.gif" alt="" /> </div>
+      <div class="right_footer">
+        <a href="#">Trang chủ</a>
+        <a href="#">Về chúng tôi</a>
+        <a href="contact.html">Liên hệ chúng tôi</a>
+      </div>
             <a href="contact.html">Liên hệ chúng tôi</a>
-          </div>
+    </div>
         </div>
       </div>{{/if}}
 
