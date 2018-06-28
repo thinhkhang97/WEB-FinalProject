@@ -121,10 +121,98 @@
             <span class="price">27000000 VND</span>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="banner_adds">
           <a href="#">
             <img src="images/bann2.jpg" alt="" border="0" />
           </a>
+=======
+        <div id="main_content">
+          <div id="menu_tab">
+            <div class="left_menu_corner"></div>
+            <ul class="menu">
+              <li>
+                <a href="/" class="nav1"> Trang chủ</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/search" class="nav2">Tìm kiếm</a>
+              </li>       
+              {{#if layoutVM.isLogged}} {{else}}
+              <li class="divider"></li>
+          {{#if layoutVM.isLogged}}
+          {{else}}
+              <li>
+                <a href="login" class="nav3">Đăng nhập</a>
+              </li>
+              {{/if}}
+              
+              {{#if layoutVM.isLogged}}
+              <li class="divider"></li>
+              <li>
+                <a href="/account" class="nav3">Tài khoản của tôi</a>
+              </li>
+              {{/if}}
+              
+          {{#if layoutVM.isLogged}}
+              <li class="divider"></li>
+              <li>
+                <a href="/logout" class="nav3">Đăng xuất</a>
+              </li>
+          {{/if}}
+             
+              {{#if layoutVM.isLogged}} {{else}}
+               <li class="divider"></li>
+          {{#if layoutVM.isLogged}} {{else}}
+              <li>
+                <a href="/register" class="nav4">Đăng kí</a>
+              </li>
+              {{/if}}
+            </ul>
+            <div class="right_menu_corner"></div>
+          </div>
+          <!-- end of menu tab -->
+          <div class="crumb_navigation"> Dẫn đường:
+            <span class="current">Trang chủ</span>
+          </div>
+          <div class="left_content">
+            <div class="title_box">Loại máy ảnh</div>
+            <ul class="left_menu">
+              <li class="odd">
+                <a href="/category?id=1">DSLR</a>
+              </li>
+              <li class="even">
+                <a href="/category?id=2">Máy ảnh du lịch</a>
+              </li>
+              <li class="odd">
+                <a href="/category?id=3">Chụp nhanh</a>
+              </li>
+              <li class="even">
+                <a href="/category?id=4">Mirroless</a>
+              </li>
+            </ul>
+            <div class="title_box">Sản phẩm đặc biệt</div>
+            <div class="border_box">
+              <div class="product_title">
+                <a href="details.html">Cannon M6</a>
+              </div>
+              <div class="product_img">
+                <a href="details.html">
+                  <img name="new_product_img" src="images/Canon_m6.png" alt="" border="0" />
+                </a>
+              </div>
+              <div class="prod_price">
+                <span class="reduce">35000000 VND</span>
+                <span class="price">27000000 VND</span>
+              </div>
+            </div>
+            <div class="banner_adds">
+              <a href="#">
+                <img src="images/bann2.jpg" alt="" border="0" />
+              </a>
+            </div>
+          </div>
+>>>>>>> acbc492911626537684286c12294ea5432ca8407
         </div>
       </div>
     </div>
@@ -139,6 +227,7 @@
         <div class="product_title">
           <a href="details.html">Canon mới</a>
         </div>
+<<<<<<< HEAD
         <div class="product_img">
           <a href="details.html">
             <img name="new_cam_img" src="images/p2.jpg" alt="" border="0" />
@@ -147,6 +236,83 @@
         <div class="prod_price">
           <span class="reduce">3500000 VND</span>
           <span class="price">2700000 VND</span>
+=======
+        <!-- End of center content -->
+        <div class="right_content">
+    {{#if layoutVM.isLogged}}
+      <div class="shopping_cart">
+        <div class="cart_title">Giỏ hàng</div>
+        <div class="cart_details"> 2 sản phẩm
+          <br>
+          <br>
+          <span class="border_cart"></span>
+        </div>
+        <div class="cart_icon">
+          <a href="/cart" title="Checkout">
+            <img src="images/shoppingcart.png" alt="" width="48" height="48" border="0">
+          </a>
+        </div>
+      </div>
+      {{/if}}
+          <div class="title_box">Có gì mới?</div>
+          <div class="border_box">
+            <div class="product_title">
+              <a href="details.html">Canon mới</a>
+            </div>
+            <div class="product_img">
+              <a href="details.html">
+                <img name="new_cam_img" src="images/p2.jpg" alt="" border="0" />
+              </a>
+            </div>
+            <div class="prod_price">
+              <span class="reduce">3500000 VND</span>
+              <span class="price">2700000 VND</span>
+            </div>
+          </div>
+          <div class="title_box">Nhà sản xuất</div>
+          <ul class="left_menu">
+            <li class="odd">
+              <a href="/manufacture?id=Cannon">Cannon</a>
+            </li>
+            <li class="even">
+              <a href="/manufacture?id=Sony">Sony</a>
+            </li>
+            <li class="odd">
+              <a href="/manufacture?id=Nikon">Nikkon</a>
+            </li>
+            <li class="even">
+              <a href="/manufacture?id=Fujifilm">Fujifilm</a>
+            </li>
+          </ul>
+          <div class="banner_adds">
+            <a href="#">
+              <img src="images/bann1.jpg" alt="" border="0" />
+            </a>
+          </div>
+        </div>
+        <!-- End of right content -->
+        <div class="footer">
+      <div class="left_footer">
+        <img src="images/footer_logo.png" alt="" width="170" height="49" /> </div>
+      <div class="center_footer"> Bản quyền năm 2018
+        <br />
+        <a href="http://csscreme.com">
+          <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+        </a>
+        <br />
+        <a href="http://csscreme.com">
+          <img src="images/csscreme.jpg" alt="csscreme" border="0" />
+        </a>
+        <br />
+        <img src="images/payment.gif" alt="" /> </div>
+      <div class="right_footer">
+        <a href="#">Trang chủ</a>
+        <a href="#">Về chúng tôi</a>
+        <a href="contact.html">Liên hệ chúng tôi</a>
+      </div>
+            <a href="contact.html">Liên hệ chúng tôi</a>
+    </div>
+>>>>>>> acbc492911626537684286c12294ea5432ca8407
         </div>
       </div>
       <div class="title_box">Nhà sản xuất</div>
