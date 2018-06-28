@@ -1,4 +1,4 @@
-
+use camera;
 /*DROP TABLE IF EXISTS orderdetails;*/
 CREATE TABLE orderdetails (
   ID int unsigned NOT NULL AUTO_INCREMENT,
