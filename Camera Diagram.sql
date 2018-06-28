@@ -104,7 +104,7 @@ insert into product values(0,'Fujifilm_instax_mini9','Fujifilm Instax Mini9',165
 alter table product
 add constraint FK_manufacture_product
 foreign key(proManID) references manufacture(manID);
-alter table product
+alter table productusers
 add constraint FK_category_product
 foreign key(proCatID) references category(catID);
 

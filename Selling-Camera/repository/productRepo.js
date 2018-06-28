@@ -35,3 +35,7 @@ exports.load5ProductByCatID = catID=>{
 exports.load5ProductByManID = manID=>{
     return db.load(`select * from product join category on proCatID = catID where proManID=${manID} order by proView desc limit 5`);
 }
+
+exports.loadAllProducts = () =>{
+    return db.load(`select * from product`);
+}

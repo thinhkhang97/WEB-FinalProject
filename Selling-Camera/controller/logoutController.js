@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
         req.session.isLogged = false;
         req.session.user = null;
         req.session.cart = [];
+        req.session.isAdmin = false;
         console.log('[SUCCESS] Delete session - logged out');
         console.log('[NOTIFY] Redirect to home');
         res.redirect('/');

@@ -10,3 +10,7 @@ exports.getNameCatgoryById = id => {
 exports.getCatgoryByCatName = name =>{
     return db.load(`select catCode from category where catID = '${name}'`);
 }
+
+exports.getAllCatgories = () =>{
+    return db.load(`select * from category`);
+}

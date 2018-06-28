@@ -29,18 +29,25 @@ router.post('/', (req, res) => {
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
-            console.log('[SUCCESS] Logged in');
-            console.log('[NOTIFY] Redirect to home');
-            res.redirect(url);
+            console.log(rows[0].role);
+            if(rows[0].role==='customer'){
+                
+                req.session.isAdmin = false;
+                console.log('[SUCCESC] Loggin in customer side');
+                console.log('[NOTIFY] Redirect to home');
+                res.redirect(url);
+            }
+            else{
+                req.session.isAdmin = true;
+                console.log('[SUCCESC] Loggin in admin side');
+                console.log('[NOTIFY] Reder in admin index');
+                res.redirect('admin');
+            }
         } else {
                 res.render('login/index');
         }
     }).catch(errs=>{
         console.log('[ERROR] Cannot log in');
     });
-
-    
-
-    
 });
 module.exports = router;

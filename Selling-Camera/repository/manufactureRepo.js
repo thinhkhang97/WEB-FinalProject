@@ -8,3 +8,7 @@ exports.getManufactureById = id =>{
 exports.loadProductByManuID = ID =>{
     return db.load(`select product.*, catCode from product join category on product.proCatID = category.catID where proManID=${ID}`)
 }
+exports.getAllManufactures = () =>{
+    return db.load(`select * from manufacture`);
+}
+

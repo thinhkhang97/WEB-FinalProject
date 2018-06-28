@@ -1,0 +1,47 @@
+<head>
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #5B959F;
+            color: white;
+        }
+    </style>
+</head>
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>Mã loại </th>
+            <th>Tên nhà sản xuất</th>
+            <th>Thông tin</th>
+        </tr>
+        {{#each catgory}}
+        <tr>
+            <td>{{manID}}</td>
+            <td>{{manName}}</td>
+            <td>{{manCountry}}</td>
+            <td>{{manInfo}}</td>
+        </tr>
+        {{/each}}
+    </table>

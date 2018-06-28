@@ -18,6 +18,11 @@ var accountController=require('./controller/accountController');
 var productController = require('./controller/productController');
 var logoutController = require('./controller/logoutController');
 var cartController = require('./controller/cartController');
+var adminController = require('./controller/adminController');
+var adminCatController = require('./controller/adminCatController');
+var adminProController = require('./controller/adminProController');
+var adminManController = require('./controller/adminManController');
+var adminUserController = require('./controller/adminUsersController');
 var handleLayoutVM = require('./middle-wares/handleLayout'),
     restrict = require('./middle-wares/restrict');
 var body_parser = require('body-parser');
@@ -83,6 +88,11 @@ app.use('/search',searchController);
 app.use('/account', restrict, accountController);
 app.use('/product',productController);
 app.use('/cart', restrict, cartController);
+app.use('/admin',adminController);
+app.use('/adminCat',adminCatController);
+app.use('/adminPro',adminProController);
+app.use('/adminMan',adminManController);
+app.use('/adminUser',adminUserController);
 app.listen(3000,(err)=>{
     if(err) throw err;
     console.log('server is running at port 3000');

@@ -1,0 +1,57 @@
+<head>
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #5B959F;
+            color: white;
+        }
+    </style>
+</head>
+<table id="customers">
+    <tr>
+        <th>ID</th>
+        <th>Họ tên</th>
+        <th>Giới tính</th>
+        <th>Điện thoại</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+        <th>Tên đăng nhập</th>
+        <th>Phân quyền</th>
+    </tr>
+    {{#each catgory}}
+    <tr>
+        <td>{{ID}}</td>
+        <td>{{hoten}}</td>
+        <td>{{gioitinh}}</td>
+        <td>{{dthoai}}</td>
+        <td>{{ngaysinh}}</td>
+        <td>{{diachi}}</td>
+        <td>{{email}}</td>
+        <td>{{username}}</td>
+        <td>{{role}}</td>
+    </tr>
+    {{/each}}
+</table>
