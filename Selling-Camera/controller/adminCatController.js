@@ -29,9 +29,22 @@ router.get('/delete', (req, res) => {
             catName: rows[0].catName,
             catInfo: rows[0].catInfo
         }
-        console.log(vm);
+        console.log('[SUCCESS] Get category'+vm);
         res.render('adminCat/delete', vm);
     });
+});
+router.get('/edit',(req,res)=>{
+   catRepo.getCatgoryById(req.query.Id).then(rows=>{
+        var vm = {
+            layout: 'admin.handlebars',
+            catID:rows[0].catID,
+            catCode: rows[0].catCode,
+            catName: rows[0].catName,
+            catInfo: rows[0].catInfo
+        }
+        console.log('[SUCCESS] Get category'+vm);
+        res.render('adminCat/edit', vm);
+   });
 });
 router.post('/add', (req, res) => {
     var vm = {
@@ -53,6 +66,20 @@ router.post('/delete',(req,res)=>{
         catID:req.body.catID
     }
     catRepo.deleteCategory(vm).then(rows=>{
+        var vm2 = {
+            layout: 'admin.handlebars'
+        }
+        res.redirect('/adminCat');
+    });
+});
+router.post('/edit',(req,res)=>{
+    var vm = {
+        catID: req.body.catID,
+        catCode:req.body.catCode,
+        catName: req.body.catName,
+        catInfo:req.body.catInfo
+    }
+    catRepo.updateCategory(vm).then(rows=>{
         var vm2 = {
             layout: 'admin.handlebars'
         }

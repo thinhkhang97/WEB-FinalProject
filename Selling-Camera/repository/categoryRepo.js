@@ -22,3 +22,7 @@ exports.insertNewCatgory = c =>{
 exports.deleteCategory = c=>{
     return db.save(`delete from category where catID = ${c.catID}`);
 }
+
+exports.updateCategory = c=>{
+    return db.save(`update category set catCode='${c.catCode}',catName='${c.catName}',catInfo='${c.catInfo}' where catID=${c.catID}`);
+}
