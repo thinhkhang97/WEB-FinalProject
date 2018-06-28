@@ -8,7 +8,6 @@
 
         #customers td,
         #customers th {
-            border: 1px solid #ddd;
             padding: 8px;
         }
 
@@ -29,8 +28,9 @@
         }
     </style>
 </head>
-
-
+<div class="center_title_bar">
+    <a href="adminPro/add">Thêm một loại sản phẩm</a>
+</div>
 <table id="customers">
     <tr>
         <th>ID</th>
@@ -41,7 +41,7 @@
         <th>Tình trạng</th>
         <th>Số lượng</th>
         <th>Ngày chỉnh sửa</th>
-        <th>Thông tin sản phẩm</th>
+        <th>&nbsp;</th>
     </tr>
     {{#each catgory}}
     <tr>
@@ -53,9 +53,10 @@
         <td>{{proAvailable}}</td>
         <td>{{proQuantity}}</td>
         <td>{{proDate}}</td>
-        <td><a href="#">
-            Click here
-        </a></td>
+        <td>
+            <a href="adminPro/delete?Id={{proID}}" class="a2"/>
+            <a href="adminPro/edit?Id={{proID}}" class="a3"/>
+        </td>
     </tr>
     {{/each}}
 </table>

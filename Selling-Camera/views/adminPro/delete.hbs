@@ -1,0 +1,84 @@
+<div class="center_content2">
+    <div class="center_title_bar">Xác nhận thông tin sản phẩm trước khi xóa</div>
+    {{#if _ok}}
+    <div class="center_title_bar">Xóa thành công</div>
+    {{/if}} {{#if _false}}
+    <div class="center_title_bar">Xóa không thành công</div>
+    {{/if}}
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <form action="" method="POST">
+                <div class="contact_form">
+                    <div class="form_row">
+                        <input name="proID" type="text"  hidden class="contact_input" value="{{proID}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Mã sản phẩm:</strong>
+                        </label>
+                        <input name="proCode" type="text" readonly class="contact_input" value="{{proCode}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Tên sản phẩm:</strong>
+                        </label>
+                        <input name="proName" type="text" readonly class="contact_input" value="{{proName}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Giá sản phẩm:</strong>
+                        </label>
+                        <input name="proPrice" type="text" readonly class="contact_input" value="{{proPrice}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Số lượng:</strong>
+                        </label>
+                        <input name="proQuantity" type="text" readonly class="contact_input" value="{{proQuantity}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Loại sản phẩm:</strong>
+                        </label>
+                        <input name="proCat" type="text" readonly class="contact_input" value="{{proCatID}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Nhà sản xuất:</strong>
+                        </label>
+                        <input name="proMan" type="text" readonly class="contact_input" value="{{proManID}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Tốc độ chụp:</strong>
+                        </label>
+                        <input name="proSpeed" type="text" readonly class="contact_input" value="{{proSpeed}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Sản xuất tại:</strong>
+                        </label>
+                        <input name="proMadeIn" type="text" readonly class="contact_input" value="{{proMadeIn}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Kích thước:</strong>
+                        </label>
+                        <input name="proSize" type="text" readonly class="contact_input" value="{{proSize}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Sản phẩm đi kèm:</strong>
+                        </label>
+                        <input name="proSup" type="text" readonly class="contact_input" value="{{proSup}}"/>
+                    </div>
+                    <div style="height:50px; clear:both">
+                        <button type="submit" class="button button-submit">Xóa</button>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>

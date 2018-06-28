@@ -1,0 +1,81 @@
+<div class="center_content2">
+    <div class="center_title_bar">Điền thông tin sản phẩm mới</div>
+    {{#if _ok}}
+    <div class="center_title_bar">Thêm thành công</div>
+    {{/if}} {{#if _false}}
+    <div class="center_title_bar">Thêm không thành công</div>
+    {{/if}}
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <form action="" method="POST">
+                <div class="contact_form">
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Mã sản phẩm:</strong>
+                        </label>
+                        <input name="proCode" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Tên sản phẩm:</strong>
+                        </label>
+                        <input name="proName" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Giá sản phẩm:</strong>
+                        </label>
+                        <input name="proPrice" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Số lượng:</strong>
+                        </label>
+                        <input name="proQuantity" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Loại sản phẩm:</strong>
+                        </label>
+                        <input name="proCat" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Nhà sản xuất:</strong>
+                        </label>
+                        <input name="proMan" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Tốc độ chụp:</strong>
+                        </label>
+                        <input name="proSpeed" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Sản xuất tại:</strong>
+                        </label>
+                        <input name="proMadeIn" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Kích thước:</strong>
+                        </label>
+                        <input name="proSize" type="text" class="contact_input" required/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Sản phẩm đi kèm:</strong>
+                        </label>
+                        <input name="proSup" type="text" class="contact_input" required/>
+                    </div>
+                    <div style="height:50px; clear:both">
+                        <button type="submit" class="button button-submit">Thêm</button>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
