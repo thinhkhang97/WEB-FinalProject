@@ -1,0 +1,42 @@
+<div class="center_content2">
+    <div class="center_title_bar">Xem kĩ thông tin trước khi xóa</div>
+    {{#if _ok}}
+    <div class="center_title_bar">Xóa thành công</div>
+    {{/if}} {{#if _false}}
+    <div class="center_title_bar">Xóa không thành công</div>
+    {{/if}}
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <form action="" method="POST">
+                <div class="contact_form">
+                    <div class="form_row">
+                        <input name="manID" type="text" hidden class="contact_input" value="{{manID}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Tên nhà sản xuất:</strong>
+                        </label>
+                        <input name="manName" type="text" readonly class="contact_input" value="{{manName}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Xuất sứ:</strong>
+                        </label>
+                        <input name="manCountry" type="text" readonly class="contact_input" value="{{manCountry}}"/>
+                    </div>
+                    <div class="form_row">
+                        <label class="contact">
+                            <strong>Thông tin nhà sản xuất:</strong>
+                        </label>
+                        <input name="manInfo" type="text" readonly class="contact_input" value="{{manInfo}}"/>
+                    </div>
+                    <div style="height:50px; clear:both">
+                        <button type="submit" class="button button-submit">Xóa</button>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>

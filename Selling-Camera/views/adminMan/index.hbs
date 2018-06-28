@@ -29,19 +29,27 @@
         }
     </style>
 </head>
-    <table id="customers">
-        <tr>
-            <th>ID</th>
-            <th>Mã loại </th>
-            <th>Tên nhà sản xuất</th>
-            <th>Thông tin</th>
-        </tr>
-        {{#each catgory}}
-        <tr>
-            <td>{{manID}}</td>
-            <td>{{manName}}</td>
-            <td>{{manCountry}}</td>
-            <td>{{manInfo}}</td>
-        </tr>
-        {{/each}}
-    </table>
+<div class="center_title_bar">
+    <a href="adminMan/add">Thêm một nhà sản xuất</a>
+</div>
+<table id="customers">
+    <tr>
+        <th>ID</th>
+        <th>Mã loại </th>
+        <th>Tên nhà sản xuất</th>
+        <th>Thông tin</th>
+        <th>&nbsp;</th>
+    </tr>
+    {{#each catgory}}
+    <tr>
+        <td>{{manID}}</td>
+        <td>{{manName}}</td>
+        <td>{{manCountry}}</td>
+        <td>{{manInfo}}</td>
+        <td>
+            <a href="adminMan/delete?Id={{manID}}" class="a2" />
+            <a href="#" class="a3" />
+        </td>
+    </tr>
+    {{/each}}
+</table>
