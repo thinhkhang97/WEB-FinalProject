@@ -34,6 +34,19 @@ router.get('/delete', (req, res) => {
             res.render('adminMan/delete', vm);
         });
 });
+router.get('/edit',(req,res)=>{
+    manRepo.getAManufactures(req.query.Id).then(rows=>{
+         var vm = {
+             layout: 'admin.handlebars',
+             manID:rows[0].manID,
+             manName: rows[0].manName,
+             manCountry: rows[0].manCountry,
+             manInfo: rows[0].manInfo
+         }
+         console.log('[SUCCESS] Get manufactures'+vm.manName+vm.manCountry+vm.manInfo);
+         res.render('adminMan/edit', vm);
+    });
+ });
 
 router.post('/add', (req, res) => {
     var vm = {
@@ -55,6 +68,20 @@ router.post('/delete',(req,res)=>{
         manID:req.body.manID
     }
     manRepo.deleteManufacetures(vm).then(rows=>{
+        var vm2 = {
+            layout: 'admin.handlebars'
+        }
+        res.redirect('/adminMan');
+    });
+});
+router.post('/edit',(req,res)=>{
+    var vm = {
+        manID: req.body.manID,
+        manName:req.body.manName,
+        manCountry: req.body.manCountry,
+        manInfo:req.body.manInfo
+    }
+    manRepo.updateManufactures(vm).then(rows=>{
         var vm2 = {
             layout: 'admin.handlebars'
         }

@@ -20,3 +20,6 @@ exports.insertNewManufactures = c =>{
 exports.deleteManufacetures = c=>{
     return db.save(`delete from manufacture where manID = ${c.manID}`);
 }
+exports.updateManufactures = c=>{
+    return db.save(`update manufacture set manName='${c.manName}',manCountry='${c.manCountry}',manInfo='${c.manInfo}' where manID=${c.manID}`);
+}

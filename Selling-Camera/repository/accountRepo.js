@@ -11,3 +11,9 @@ exports.update = (c) =>{
 exports.loadAllAccount = ()=>{
     return db.load(`select * from users`);
 }
+exports.deleteUser= c=>{
+    return db.save(`delete from users where ID = ${c.ID}`);
+}
+exports.updateUser = c=>{
+    return db.save(`update users set hoten='${c.hoten}',dthoai='${c.dthoai}',diachi='${c.diachi}',email='${c.email}',username='${c.username}' where ID=${c.ID}`);
+}
