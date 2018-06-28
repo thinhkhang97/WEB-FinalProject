@@ -7,22 +7,30 @@
     });
     $('.changeItemUp').on('click', function () {
         var id = $(this).data('proid');
-        var num = $('#number').val() + 1;
-        if(num > $('#number').)
-            num = $('#number').val();
+        var number = '#'+id;
+        var num = $(number).val();
+        num++;
+        var max = document.getElementById(id).getAttribute("max");
+        if (num > max){
+            num = num--;
+            alert("Số lượng sản phẩm không đủ");
+        }
         $('#txtQuantity_C').val(id);
-        
-        $('#frmChangeItem').submit(num);
+        $('#txtQuantity_C').val(num);
+        $('#frmChangeItem').submit();
     });
     $('.changeItemDown').on('click', function () {
         var id = $(this).data('proid');
+        var number = '#'+id;
+        var num = $(number).val();
+        num--;
+        if (num == 0){
+            num = $(number).val();
+            alert("Số lượng sản phẩm không phù hợp");
+        }
         $('#txtproID_C').val(id);
-        var num = $('#number').val() - 1;
-        if(num == 0)
-            num = $('#number').val();
-        $('#txtQuantity_C').val(id);
-        
-        $('#frmChangeItem').submit(num);
+        $('#txtQuantity_C').val(num);
+        $('#frmChangeItem').submit();
     });
 </script> {{/section}}
 <div class="cart_form">
@@ -49,7 +57,7 @@
                                 <a href="index.html" style="color: blue">Thế giới máy ảnh</a>
                             </p>
                             <p class="action">
-                                <button type="button" class="btn-form removeItem" style="width: 45px;height: 30px" data-proid="{{Product.proID}}">Xóa</button>
+                                <button type="button" class="btn-form removeItem" href="javascript:;" style="width: 45px;height: 30px" data-proid="{{Product.proID}}">Xóa</button>
                             </p>
                         </div>
                         <div class="price">
@@ -59,7 +67,7 @@
                         </div>
                         <div class="block-num">
                             <button class="btn changeItemDown" type="button " data-proid="{{Product.proID}}">-</button>
-                            <input type="number" id="{{Product.proID}}" min="1" max ="{{Product.proQuantity}}" value="{{Quantity}}" class="number">
+                            <input type="number" id="{{Product.proID}}" min="1" max="{{Product.proQuantity}}" value="{{Quantity}}" class="number">
                             <button class="btn changeItemUp" type="button" data-proid="{{Product.proID}}">+</button>
                         </div>
                     </div>
