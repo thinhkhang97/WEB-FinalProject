@@ -2,6 +2,7 @@ var express = require('express');
 var accountRepo = require('../repository/accountRepo');
 var router = express.Router();
 var SHA256 = require('crypto-js/sha256');
+var getF = require('../fn/getFolder');
 var moment = require('moment');
 
 router.get('/', (req, res) => {
@@ -72,22 +73,35 @@ router.get('/order', (req, res) => {
         for (var i = 0; i < pRows.length; i++) {
             vm.orders[i].OrderDate = moment(vm.orders.OrderDate).format('YYYY-MM-DD');
         }
-        console.log(vm.orders);
         res.render('profile/order', vm);
     });
 });
-router.post('/order', (req, res) => {
-    accountRepo.loadOrder(req.session.user.id).then(rows => {
+
+router.get('/orderdetail', (req, res) => {
+    p1 = accountRepo.loadOrderUsers(req.query.id);
+    p2 = accountRepo.loadOrderDetail(req.query.id);
+    var total=0;
+    var f=[];
+    Promise.all([p1,p2]).then(([pO, pOD]) => {
+        for(var i = 0; i <pOD.length; i++){
+            var fd = getF.getCatgoryById(pOD[i].proCatID);
+            total += pOD[i].Amount * 1;
+            var item={
+                pro: pOD[i],
+                fd: fd,
+            }
+            f.push(item);
+        }
         var vm = {
-            orders: rows,
+            orders: pO[0],
+            details: f,
+            total: total,
             layout: 'profileLayout.handlebars',
             //user: req.session.user
         };
-        console.log(vm.order);
-        for (var i = 0; i < vm.order.length; i++) {
-            vm.order.OrderDate = moment(vm.userdetail.ngaysinh).format('YYYY-MM-DD');
-        }
-        res.render('profile/orderview', vm);
+
+        vm.orders.OrderDate = moment(vm.orders.OrderDate).format('YYYY-MM-DD');
+        res.render('profile/orderdetail', vm);
     });
 });
 module.exports = router;

@@ -1,3 +1,12 @@
+{{#section 'js'}}
+<script type="text/javascript">
+    $('.add').on('click', function () {
+        var id = $(this).data('proid');
+        $('#proID').val(id);
+        $('#frmItem').submit();
+    });
+</script> 
+{{/section}}
  <div class="center_title_bar">10 sản phẩm mới nhất</div>
  {{#each top10Newest}}
 <div class="prod_box" >
@@ -21,7 +30,7 @@
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
         </a>
         {{#if ../layoutVM.isLogged}}
-        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        <a href="#" title="Thêm vào giỏ hàng" data-proid="{{proID}}" class="add"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
         {{/if}}
         <a href="#" title="{{proView}} lượt xem">
             <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
@@ -54,7 +63,7 @@
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
         </a>
         {{#if ../layoutVM.isLogged}}
-        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        <a href="#" title="Thêm vào giỏ hàng" data-proid="{{proID}}" class="add"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
         {{/if}}
         <a href="#" title="{{proView}} lượt xem">
             <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
@@ -87,7 +96,7 @@
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
         </a>
         {{#if ../layoutVM.isLogged}}
-        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        <a href="#" title="Thêm vào giỏ hàng" data-proid="{{proID}}" class="add"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
         {{/if}}
         <a href="#" title="{{proView}} lượt xem">
             <img src="images/favorites.gif" alt="" border="0" class="left_bt" />
@@ -96,3 +105,7 @@
     </div>
 </div>
 {{/each}}
+<form id="frmItem" method="post" action="/cart/add" style="display:none">
+    <input id="proID" type="text" name="proID">
+    <input id="proQuantity" type="number" name="proQuantity" value="1">
+</form>
