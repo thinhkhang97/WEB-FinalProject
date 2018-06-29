@@ -1,5 +1,23 @@
 {{#section 'title'}} Trang chủ > Giỏ hàng {{/section}} {{#section 'js'}}
 <script type="text/javascript">
+    function pay() {
+        location.href = '/cart/pay';
+    }
+    function change(id){
+        var number = '#' + id;
+        var num = $(number).val();
+        var max = document.getElementById(id).getAttribute("max");
+        if (num > max || num <= 0) {
+            num = 1;
+            alert("Số lượng sản phẩm không đủ");
+            return;
+        }
+        $('#txtproID_C').val(id);
+        $('#txtQuantity_C').val(num);
+        $('#frmChangeItem').submit();
+    }
+</script>
+<script type="text/javascript">
     $('.removeItem').on('click', function () {
         var id = $(this).data('proid');
         $('#txtproID_R').val(id);
@@ -7,34 +25,33 @@
     });
     $('.changeItemUp').on('click', function () {
         var id = $(this).data('proid');
-        var number = '#'+id;
+        var number = '#' + id;
         var num = $(number).val();
         num++;
         var max = document.getElementById(id).getAttribute("max");
-        if (num > max){
+        if (num > max) {
             num = num--;
             alert("Số lượng sản phẩm không đủ");
-        }
-        $('#txtQuantity_C').val(id);
-        $('#txtQuantity_C').val(num);
-        $('#frmChangeItem').submit();
-    });
-    $('.changeItemDown').on('click', function () {
-        var id = $(this).data('proid');
-        var number = '#'+id;
-        var num = $(number).val();
-        num--;
-        if (num == 0){
-            num = $(number).val();
-            alert("Số lượng sản phẩm không phù hợp");
+            return;
         }
         $('#txtproID_C').val(id);
         $('#txtQuantity_C').val(num);
         $('#frmChangeItem').submit();
     });
-    function pay() {
-        location.href = '/cart/pay';
-    }
+    $('.changeItemDown').on('click', function () {
+        var id = $(this).data('proid');
+        var number = '#' + id;
+        var num = $(number).val();
+        num--;
+        if (num <= 0) {
+            num = $(number).val();
+            alert("Số lượng sản phẩm không phù hợp");
+        }        
+
+        $('#txtproID_C').val(id);
+        $('#txtQuantity_C').val(num);
+        $('#frmChangeItem').submit();
+    });
 </script> {{/section}}
 <div class="cart_form">
     <div class="cart_name">Giỏ hàng</div>
@@ -70,7 +87,7 @@
                         </div>
                         <div class="block-num">
                             <button class="btn changeItemDown" type="button " data-proid="{{Product.proID}}">-</button>
-                            <input type="number" id="{{Product.proID}}" min="1" max="{{Product.proQuantity}}" value="{{Quantity}}" class="number">
+                            <input type="number" id="{{Product.proID}}" min="1" max="{{Product.proQuantity}}" value="{{Quantity}}" class="number" onchange="change({{Product.proID}})">
                             <button class="btn changeItemUp" type="button" data-proid="{{Product.proID}}">+</button>
                         </div>
                     </div>
