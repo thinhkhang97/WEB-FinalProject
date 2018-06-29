@@ -10,11 +10,19 @@ exports.update = (c) =>{
 }
 
 exports.loadOrder = (id) => {
-    var sql = `select * from orders where UserID='${id}'`;
+    var sql = `select * from orders where UserID='${id}' ORDER BY OrderDate DESC`;
     return db.load(sql);
 }
 
+exports.loadOrderUsers = (id) => {
+    var sql = `SELECT *
+    FROM orders, users
+    WHERE orders.OrderID='${id}'AND orders.UserID = users.ID`;
+    return db.load(sql);
+}
 exports.loadOrderDetail = (id) => {
-    var sql = `select * from orderdetails where OderID='${id}'`;
+    var sql = `SELECt orderdetails.*, product.proCode, product.proName, product.proCatID
+    FROM orderdetails, product
+    where orderdetails.OrderID = '${id}' AND orderdetails.ProID = product.proID`;
     return db.load(sql);
 }
