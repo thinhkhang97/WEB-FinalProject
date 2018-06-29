@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-    accountRepo.loadAccount(req.session.users.id).then(rows => {
+    console.log(req.session.user);
+    accountRepo.loadAccount(req.session.user.ID).then(rows => {
+        console.log(rows[0]);
         var vm = {
             userdetail: rows[0],
             layout: 'profileLayout.handlebars',
@@ -29,7 +31,7 @@ router.post('/profile', (req, res) => {
     console.log(req.body);
     if (req.body.new_password != '') {
         var user = {
-            ID: req.session.users.id,
+            ID: req.session.user.ID,
             passwords: SHA256(req.body.new_password).toString(),
             hoten: req.body.name,
             gioitinh: req.body.gender,
@@ -40,8 +42,8 @@ router.post('/profile', (req, res) => {
         };
     } else {
         var user = {
-            ID: req.session.users.id,
-            passwords: req.session.users.passwords,
+            ID: req.session.user.ID,
+            passwords: req.session.user.passwords,
             hoten: req.body.name,
             gioitinh: req.body.gender,
             ngaysinh: dob,
@@ -58,7 +60,7 @@ router.post('/profile', (req, res) => {
 });
 
 router.get('/order', (req, res) => {
-    var p1 = accountRepo.loadOrder(req.session.users.id);
+    var p1 = accountRepo.loadOrder(req.session.user.id);
 
     Promise.all([p1]).then(([pRows]) => {
         var vm = {
@@ -75,7 +77,7 @@ router.get('/order', (req, res) => {
     });
 });
 router.post('/order', (req, res) => {
-    accountRepo.loadOrder(req.session.users.id).then(rows => {
+    accountRepo.loadOrder(req.session.user.id).then(rows => {
         var vm = {
             orders: rows,
             layout: 'profileLayout.handlebars',
