@@ -9,15 +9,18 @@ exports.loadId = (order)=>{
     return db.load(sql);
 }
 exports.insertOrder= order => {
-    var sql = `insert into orders(OrderDate, UserID, Ship, Total, status) values('${order.OrderDate}', '${order.UserID}', '${order.Ship}', '${order.Total}', 'Chưa giao hàng')`;
+    var sql = `insert into orders(OrderDate, UserID, Ship, Total) values('${order.OrderDate}', '${order.UserID}', '${order.Ship}', '${order.Total}')`;
     return db.save(sql);
 }
 
-exports.insertOrderDetail = orderdetail => {
-    var sql = `insert into orderdetails(OrderID, ProID, Quantity, Price, Amount) values('${orderdetail.OrderID}', '${orderdetail.ProID}', '${orderdetail.Quantity}', '${orderdetail.Price}', '${orderdetail.Amount}')`;
+exports.insertOrderDetail = (orderdetail, id) => {
+    var sql = `insert into orderdetails(OrderID, ProID, Quantity, Price, Amount) values('${id}', '${orderdetail.ProID}', '${orderdetail.Quantity}', '${orderdetail.Price}', '${orderdetail.Amount}')`;
     return db.save(sql);
 }
-
+exports.updateQuantity = (c, id) =>{
+    var sql = `update product set proQuantity= '${c}' where proID ='${id}'`;
+    return db.save(sql);
+}
 
 exports.add = (cart, item) => {
     for (i = cart.length - 1; i >= 0; i--) {

@@ -1,5 +1,20 @@
 {{#section 'title'}} Trang chủ > Giỏ hàng > Thanh toán {{/section}} {{#section 'js'}}
 <script type="text/javascript">
+    function change(id){
+        var number = '#' + id;
+        var num = $(number).val();
+        var max = document.getElementById(id).getAttribute("max");
+        if (num > max || num <= 0) {
+            num = 1;
+            alert("Số lượng sản phẩm không đủ");
+            return;
+        }
+        $('#txtproID_C').val(id);
+        $('#txtQuantity_C').val(num);
+        $('#frmChangeItem').submit();
+    }
+</script>
+<script type="text/javascript">
     $('.removeItem').on('click', function () {
         var id = $(this).data('proid');
         $('#txtproID_R').val(id);
@@ -15,7 +30,7 @@
             num = num--;
             alert("Số lượng sản phẩm không đủ");
         }
-        $('#txtQuantity_C').val(id);
+        $('#txtproID_C').val(id);
         $('#txtQuantity_C').val(num);
         $('#frmChangeItem').submit();
     });
@@ -24,10 +39,11 @@
         var number = '#' + id;
         var num = $(number).val();
         num--;
-        if (num == 0) {
+        if (num <= 0) {
             num = $(number).val();
             alert("Số lượng sản phẩm không phù hợp");
-        }
+        }        
+
         $('#txtproID_C').val(id);
         $('#txtQuantity_C').val(num);
         $('#frmChangeItem').submit();
@@ -71,7 +87,7 @@
                         </div>
                         <div class="block-num">
                             <button class="btn changeItemDown" type="button " data-proid="{{Product.proID}}">-</button>
-                            <input type="number" id="{{Product.proID}}" min="1" max="{{Product.proQuantity}}" value="{{Quantity}}" class="number">
+                            <input type="number" id="{{Product.proID}}" min="1" max="{{Product.proQuantity}}" value="{{Quantity}}" class="number" onchange="change({{Product.proID}})">
                             <button class="btn changeItemUp" type="button" data-proid="{{Product.proID}}">+</button>
                         </div>
                     </div>
