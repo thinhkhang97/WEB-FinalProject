@@ -51,7 +51,7 @@ router.get('/pay', (req, res) => {
         var p = productRepo.loadProductByID(cartItem.proID);
         arr.push(p);
     }
-    var user = accountRepo.loadAccount(req.session.users.id);
+    var user = accountRepo.loadAccount(req.session.user.id);
     arr.push(user);
     var items = [];
     var toTal = 0, ship = 0, toTal_ship = 0;

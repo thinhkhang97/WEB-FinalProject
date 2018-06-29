@@ -2,6 +2,7 @@
 <script type="text/javascript">
     $('.add').on('click', function () {
         var id = $(this).data('proid');
+        console.log("proID="+id);
         $('#proID').val(id);
         $('#frmItem').submit();
     });

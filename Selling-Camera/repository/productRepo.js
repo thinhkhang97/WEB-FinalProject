@@ -41,8 +41,8 @@ exports.loadAllProducts = () =>{
 }
 
 exports.insertNewProduct = p =>{
-    return db.save(`insert into product (proCode,proName,proPrice,proView,proAvailable,proQuantity,proCatID,proManID,proSpeed,proMadeIn,proSize,proSup) 
-        values('${p.proCode}','${p.proName}',${p.proPrice},0,true,${p.proQuantity},${p.proCatID},${p.proManID},${p.proSpeed},'${p.proMadeIn}','${p.proSize}','${p.proSup}')`);
+    return db.save(`insert into product (proCode,proName,proPrice,proView,proAvailable,proQuantity,proCatID,proManID,proSpeed,proMadeIn,proSize,proSup,proDate) 
+        values('${p.proCode}','${p.proName}',${p.proPrice},0,true,${p.proQuantity},${p.proCatID},${p.proManID},${p.proSpeed},'${p.proMadeIn}','${p.proSize}','${p.proSup}','${p.proDate}')`);
 }
 
 exports.deleteProductByID = id =>{
@@ -50,5 +50,5 @@ exports.deleteProductByID = id =>{
 }
 
 exports.updateProduct = p =>{
-    return db.save(`update product set proCode='${p.proCode}',proName='${p.proName}',proPrice=${p.proPrice},proQuantity=${p.proQuantity},proCatID=${p.proCatID},proManID=${p.proManID},proSpeed=${p.proSpeed},proMadeIn='${p.proMadeIn}',proSize='${p.proSize}',proSup='${p.proSup}' where proID=${p.proID}`)
+    return db.save(`update product set proCode='${p.proCode}',proName='${p.proName}',proPrice=${p.proPrice},proQuantity=${p.proQuantity},proCatID=${p.proCatID},proManID=${p.proManID},proSpeed=${p.proSpeed},proMadeIn='${p.proMadeIn}',proSize='${p.proSize}',proSup='${p.proSup}',proDate='${p.proDate}' where proID=${p.proID}`)
 }

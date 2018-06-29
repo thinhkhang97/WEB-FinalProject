@@ -46,6 +46,8 @@ router.get('/delete',(req,res)=>{
     });
 });
 router.post('/add',(req,res)=>{
+    var utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+    console.log(utc);
     var  vm = {
         proCode:req.body.proCode,
         proName:req.body.proName,
@@ -56,7 +58,8 @@ router.post('/add',(req,res)=>{
         proSpeed:req.body.proSpeed,
         proMadeIn:req.body.proMadeIn,
         proSize:req.body.proSize,
-        proSup:req.body.proSup
+        proSup:req.body.proSup,
+        proDate:utc
     }
     proRepo.insertNewProduct(vm).then(rows=>{
         var vm2 = {
@@ -74,6 +77,8 @@ router.post('/delete',(req,res)=>{
     });
 });
 router.get('/edit',(req,res)=>{
+    var utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+    console.log(utc);
     proRepo.loadProductByID(req.query.Id).then(rows=>{
         var  vm = {
             layout:'admin.handlebars',
@@ -93,6 +98,8 @@ router.get('/edit',(req,res)=>{
     });
 });
 router.post('/edit',(req,res)=>{
+    var utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+    console.log(utc);
     var  vm = {
         proID:req.body.proID,
         proCode:req.body.proCode,
@@ -104,7 +111,8 @@ router.post('/edit',(req,res)=>{
         proSpeed:req.body.proSpeed,
         proMadeIn:req.body.proMadeIn,
         proSize:req.body.proSize,
-        proSup:req.body.proSup
+        proSup:req.body.proSup,
+        proDate:utc
     }
     proRepo.updateProduct(vm).then(rows=>{
         console.log('[SUCCESS] Edited product id='+req.body.proID);
