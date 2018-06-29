@@ -21,13 +21,14 @@ router.get('/profile', (req, res) => {
 
         vm.userdetail.ngaysinh = moment(vm.userdetail.ngaysinh).format('YYYY-MM-DD');
         res.render('profile/index', vm);
-    }).catch(err => {
-        res.redirect('login/index');
     });
 });
 router.post('/profile', (req, res) => {
     var dob = moment(req.body.dob).format('YYYY-MM-DDTHH:mm');
 
+    console.log(req.body.dob);
+    console.log(dob);
+    console.log(req.body);
     if (req.body.new_password != '') {
         var user = {
             ID: req.session.user.ID,
@@ -51,6 +52,8 @@ router.post('/profile', (req, res) => {
             //permission: 0
         };
     }
+    console.log(user);
+    console.log(req.headers.referer);
     accountRepo.update(user).then(value => {
         res.redirect(req.headers.referer);
     });

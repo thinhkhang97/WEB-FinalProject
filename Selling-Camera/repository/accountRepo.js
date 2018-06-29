@@ -1,5 +1,8 @@
 var  db = require('../fn/db');
-
+exports.loadAllAccount = ()=>{
+    var sql = `select * from users`;
+    return db.load(sql);
+}
 exports.loadAccount = (id)=>{
     var sql = `select * from users where ID='${id}'`;
     return db.load(sql);

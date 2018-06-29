@@ -8,7 +8,6 @@ var moment = require('moment');
 var router = express.Router();
 router.get('/', (req, res) => {
     var arr = [];
-    req.session.cart=[{proID:'1', proQuantity:1}, {proID:'2', proQuantity:2}, {proID:'3', proQuantity:2}];
     console.log(req.session.cart)
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
@@ -47,7 +46,6 @@ router.get('/', (req, res) => {
 router.get('/pay', (req, res) => {
 
     var arr = [];
-    req.session.cart=[{proID:'1', proQuantity:1}, {proID:'2', proQuantity:2}, {proID:'3', proQuantity:2}];
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
         var p = productRepo.loadProductByID(cartItem.proID);
@@ -93,6 +91,7 @@ router.post('/add', (req, res) => {
     };
 
     cartRepo.add(req.session.cart, item);
+    console.log(req.session.cart),
     res.redirect(req.headers.referer);
 });
 
@@ -113,7 +112,6 @@ router.post('/change', (req, res) => {
 
 router.post('/pay', (req, res) => {
     var arr = [];
-    req.session.cart=[{proID:'1', proQuantity:1}, {proID:'2', proQuantity:2}, {proID:'3', proQuantity:2}];
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
         var p = productRepo.loadProductByID(cartItem.proID);

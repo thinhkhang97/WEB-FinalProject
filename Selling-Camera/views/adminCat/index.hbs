@@ -26,11 +26,28 @@
             background-color: #5B959F;
             color: white;
         }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+        .alert.success {
+            background-color: #4CAF50;
+        }
+
+        .alert.info {
+            background-color: #5B959F;
+        }
+
+        .alert.warning {
+            background-color: #ff9800;
+        }
     </style>
 </head>
-<div class="center_title_bar">
-    <a href="adminCat/add">Thêm một loại sản phẩm</a>
-</div>
 <table id="customers">
     <tr>
         <th>ID</th>
@@ -46,8 +63,8 @@
         <td>{{catName}}</td>
         <td>{{catInfo}}</td>
         <td>
-            <a href="adminCat/delete?Id={{catID}}" class="a2"/>
-            <a href="adminCat/edit?Id={{catID}}" class="a3"/>
+            <a href="adminCat/delete?Id={{catID}}" class="a2" />
+            <a href="adminCat/edit?Id={{catID}}" class="a3" />
         </td>
     </tr>
     {{/each}}
