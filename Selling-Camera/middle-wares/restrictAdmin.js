@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-    if (req.session.isLogged === true) {
+    if (req.session.isAdmin === true && req.session.isLogged===true) {
         next();
     }
     else {

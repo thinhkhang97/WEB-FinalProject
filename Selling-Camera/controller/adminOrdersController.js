@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/',(req,res)=>{
     orderRepo.loadAllOrders().then(rows=>{
         var vm={
-            orders:rows,
+            order:rows,
             layout:'admin.handlebars'
         }
         res.render('adminOrders/index',vm);

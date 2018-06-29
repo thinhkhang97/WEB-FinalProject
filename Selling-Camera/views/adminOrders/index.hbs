@@ -1,0 +1,52 @@
+<head>
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #5B959F;
+            color: white;
+        }
+    </style>
+</head>
+<table id="customers">
+    <tr>
+        <th>ID</th>
+        <th>Ngày lập</th>
+        <th>ID của người dùng</th>
+        <th>Tình trạng ship</th>
+        <th>Tổng tiền hóa đơn</th>
+        <th>&nbsp;</th>
+    </tr>
+    {{#each order}}
+    <tr>
+        <td>{{OrderID}}</td>
+        <td>{{OrderDate}}</td>
+        <td>{{UserID}}</td>
+        <td>{{Ship}}</td>
+        <td>{{Total}}</td>
+        <td>
+            <a href="adminMan/edit?Id={{manID}}" class="a3"/>
+        </td>
+    </tr>
+    {{/each}}
+</table>

@@ -25,7 +25,8 @@ var adminManController = require('./controller/adminManController');
 var adminUserController = require('./controller/adminUsersController');
 var adminOrdersController = require('./controller/adminOrdersController');
 var handleLayoutVM = require('./middle-wares/handleLayout'),
-    restrict = require('./middle-wares/restrict');
+    restrict = require('./middle-wares/restrict'),
+    restrictAdmin = require('./middle-wares/restrictAdmin');
 var body_parser = require('body-parser');
 var path = require('path');
 
@@ -60,6 +61,7 @@ var sessionStore = new MySQLStore({
     host: 'localhost',
     port: 3306,
     user: 'root',
+    password: '',
     database: 'camera',
     schema: {
         tableName: 'sessions',
@@ -89,12 +91,12 @@ app.use('/search',searchController);
 app.use('/account', restrict, accountController);
 app.use('/product',productController);
 app.use('/cart', restrict, cartController);
-app.use('/admin',adminController);
-app.use('/adminCat',adminCatController);
-app.use('/adminPro',adminProController);
-app.use('/adminMan',adminManController);
-app.use('/adminUser',adminUserController);
-app.use('/adminOrder',adminOrdersController);
+app.use('/admin', restrictAdmin,adminController);
+app.use('/adminCat', restrictAdmin,adminCatController);
+app.use('/adminPro', restrictAdmin,adminProController);
+app.use('/adminMan', restrictAdmin,adminManController);
+app.use('/adminUser', restrictAdmin,adminUserController);
+app.use('/adminOrder', restrictAdmin,adminOrdersController);
 app.listen(3000,(err)=>{
     if(err) throw err;
     console.log('server is running at port 3000');

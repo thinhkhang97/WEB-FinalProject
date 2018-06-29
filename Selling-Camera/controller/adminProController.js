@@ -11,6 +11,7 @@ router.get('/',(req, res)=>{
             t['proDate'] = time;
         }
         var vm = {
+            layout:'admin.handlebars',
             catgory:rows
         }
         console.log(vm);

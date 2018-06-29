@@ -6,6 +6,7 @@ var db=require('../fn/db');
 router.get('/',(req, res)=>{
     manRepo.getAllManufactures().then(rows=>{
         var vm = {
+            layout:'admin.handlebars',
             catgory:rows
         }
         console.log(vm);

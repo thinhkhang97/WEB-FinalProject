@@ -14,13 +14,13 @@
                         <label class="contact">
                             <strong>Họ tên:</strong>
                         </label>
-                        <input name="fullname" type="text" class="contact_input" required/>
+                        <input name="fullname" type="text" class="contact_input" pattern="[A-Z a-z]{5,}" title="Tên phải có tối thiểu 5 kí tự và không có kí tự số hoặc đặc biệt" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
                             <strong>Số điện thoại liên hệ:</strong>
                         </label>
-                        <input name="phone" type="text" class="contact_input" required/>
+                        <input name="phone" type="tel" class="contact_input"  pattern="[0-9]{9,}" title="Số điện thoại phải có ít nhất 9 chữ số" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -32,7 +32,7 @@
                         <label class="contact">
                             <strong>Tên người dùng:</strong>
                         </label>
-                        <input name="username" type="text" class="contact_input" required/>
+                        <input name="username" type="text" class="contact_input" pattern="[A-Za-z0-9]{5,}"  title="Tên người dùng là chuỗi từ a-z hoặc A-Z 0-9 it nhất 5 kí tự và không có kí tự đặc biệt hay khoảng trắng" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -40,7 +40,7 @@
                                 Mật khẩu:
                             </strong>
                         </label>
-                        <input name="password" class="contact_input" type="password" required/>
+                        <input name="password" class="contact_input" type="password" pattern="[A-Za-z0-9]{5,}" title="Mật khẩu là chuỗi từ a-z hoặc A-Z 0-9 it nhất 5 kí tự và không có kí tự đặc biệt hay khoảng trắng" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
@@ -48,7 +48,7 @@
                                 Nhập lại mật khẩu:
                             </strong>
                         </label>
-                        <input name="confirmpassword" class="contact_input" type="password" required/>
+                        <input name="confirmpassword" class="contact_input" type="password" type="password" pattern="[A-Za-z0-9]{5,}" title="Mật khẩu là chuỗi từ a-z hoặc A-Z 0-9 it nhất 5 kí tự và không có kí tự đặc biệt hay khoảng trắng" required/>
                     </div>
                     <div class="form_row">
                         <label class="contact">
