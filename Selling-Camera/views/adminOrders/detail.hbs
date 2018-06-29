@@ -30,26 +30,19 @@
 </head>
 <table id="customers">
     <tr>
-        <th>ID</th>
-        <th>Ngày lập</th>
-        <th>ID của người dùng</th>
-        <th>Tình trạng ship</th>
-        <th>Tổng tiền hóa đơn</th>
-        <th>Tình trạng đơn hàng</th>
-        <th>&nbsp;</th>
+        <th>Mã đơn hàng</th>
+        <th>Mã sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá</th>
+        <th>Tổng tiền</th>
     </tr>
     {{#each order}}
     <tr>
         <td>{{OrderID}}</td>
-        <td>{{OrderDate}}</td>
-        <td>{{UserID}}</td>
-        <td>{{Ship}}</td>
-        <td>{{Total}}</td>
-        <td>{{Status}}</td>
-        <td>
-            <a href="adminOrder/detail?Id={{OrderID}}" class="a4"/>
-            <a href="adminOrder/edit?Id={{OrderID}}" class="a3"/>
-        </td>
+        <td>{{ProID}}</td>
+        <td>{{Quantity}}</td>
+        <td>{{Price}}</td>
+        <td>{{Amount}}</td>
     </tr>
     {{/each}}
 </table>

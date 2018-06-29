@@ -119,6 +119,7 @@ router.post('/change', (req, res) => {
 
 router.post('/pay', (req, res) => {
     var arr = [];
+    console.log("Processing orders");
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
         var p = productRepo.loadProductByID(cartItem.proID);
@@ -127,6 +128,7 @@ router.post('/pay', (req, res) => {
     var items=[];
     var toTal = 0, ship = 0, toTal_ship = 0;
     Promise.all(arr).then(result => {
+        
         for (var i = result.length - 1; i >= 0; i--) {
             var pro = result[i][0];    
             var item = {
@@ -144,7 +146,7 @@ router.post('/pay', (req, res) => {
         var date = moment(new Date()).format('YYYY-MM-DDTHH:mm');
         var order={
             OrderDate: date,
-            UserID: req.session.users.id,
+            UserID: req.session.user.ID,
             Ship: ship,
             Total: toTal_ship,
         }

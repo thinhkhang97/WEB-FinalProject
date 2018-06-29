@@ -21,6 +21,15 @@ router.get('/edit',(req,res)=>{
         res.render('adminOrders/edit',vm);
     });
 });
+router.get('/detail',(req,res)=>{
+    orderRepo.loadAnDetailOrders(req.query.Id).then(rows=>{
+        var vm={
+            layout:'admin.handlebars',
+            order:rows
+        }
+        res.render('adminOrders/detail',vm);
+    });
+});
 router.post('/edit',(req,res)=>{
     var vm = {
         Status:req.body.Status,

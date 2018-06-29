@@ -9,7 +9,7 @@ exports.loadId = (order)=>{
     return db.load(sql);
 }
 exports.insertOrder= order => {
-    var sql = `insert into orders(OrderDate, UserID, Ship, Total) values('${order.OrderDate}', '${order.UserID}', '${order.Ship}', '${order.Total}')`;
+    var sql = `insert into orders(OrderDate, UserID, Ship, Total,Status) values('${order.OrderDate}', '${order.UserID}', '${order.Ship}', '${order.Total}','Chưa giao')`;
     return db.save(sql);
 }
 

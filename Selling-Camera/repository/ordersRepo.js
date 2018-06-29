@@ -8,3 +8,6 @@ exports.loadAnOrders = id =>{
 exports.updateStatus = o =>{
     return db.load(`update orders set Status='${o.Status}' where OrderID = ${o.OrderID}`);
 }
+exports.loadAnDetailOrders = id =>{
+    return db.load(`select * from orderdetails where OrderID = ${id}`);
+}

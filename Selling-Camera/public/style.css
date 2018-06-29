@@ -313,6 +313,12 @@ background:url(images/checked.png) no-repeat left #7bbcc7; color:#FFFFFF;backgro
     text-decoration:none;
     float: left;
 }
+.a4{
+    width:16px;height:16px;display:block;
+    background:url(images/info.png) no-repeat;
+    text-decoration:none;
+    float: left;
+}
 
 .border_box{
 width:194px;

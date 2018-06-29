@@ -1,4 +1,5 @@
-{{#section 'title'}} Trang chủ > Giỏ hàng > Thanh toán {{/section}} {{#section 'js'}}
+{{#section 'title'}} Trang chủ > Giỏ hàng > Thanh toán {{/section}}
+{{#section 'js'}}
 <script type="text/javascript">
     function change(id){
         var number = '#' + id;
@@ -50,6 +51,7 @@
     });
     $('.order').on('click', function () {
         $('#frmOrder').submit();
+        console.log("Summited pay");
     });
 </script> {{/section}}
 
