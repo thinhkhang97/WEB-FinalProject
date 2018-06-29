@@ -32,9 +32,6 @@
         $('#txtQuantity_C').val(num);
         $('#frmChangeItem').submit();
     });
-    $('.order').on('click', function () {
-        $('#frmOrder').submit();
-    });
 </script> {{/section}}
 
 <div class="cart_form">
@@ -125,7 +122,7 @@
                             <strong style="float: right; color: #fe3834; font-size: 22px;">{{number_format total_ship}}&nbsp;₫ </strong>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-check order">Tiến hành đặt hàng
+                    <button type="button" class="btn btn-check" onclick="pay()">Tiến hành đặt hàng
                     </button>
                 </div>
                 <div class="row">
@@ -155,6 +152,4 @@
 <form id="frmChangeItem" method="post" action="/cart/change" style="display:none">
     <input id="txtproID_C" type="text" name="proID_C">
     <input id="txtQuantity_C" type="number" name="proQuantity_C">
-</form>
-<form id="frmOrder" method="post" action="" style="display:none">
 </form>
