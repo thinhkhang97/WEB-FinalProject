@@ -6,7 +6,7 @@
                 <span class="glyphicon-user" aria-hidden="true" style="color: red"></span>Thông tin tài khoản</a>
         </li>
         <li class="profile_active">
-            <a href="#">
+            <a href="/account/order">
                 <span class="glyphicon-shopping-cart" aria-hidden="true" style="color: red"></span>Quản lý đơn hàng</a>
         </li>
     </ul>
@@ -18,48 +18,29 @@
         <table class="table-custom">
             <thead>
                 <tr>
-                    <th style="width: 85px">Mã đơn hàng</th>
-                    <th style="width: 70px">Ngày mua</th>
-                    <th style="width: 450px">Sản phẩm</th>
-                    <th style="width: 75px">Tổng tiền</th>
-                    <th style="width: 100px">Trạng thái
+                    <th style="width: 100px">Mã đơn hàng</th>
+                    <th style="width: 100px">Ngày mua</th>
+                    <th style="width: 120px">Tổng tiền</th>
+                    <th style="width: 20px"></th>
+                    <th style="width: 85px">Trạng thái
                         <br> đơn hàng</th>
                 </tr>
             </thead>
             <tbody>
+                {{#each orders}}
                 <tr>
                     <td>
-                        <a href="">000005</a>
+                        <a href="/account/orderdetail?id={{OrderID}}">{{OrderID}}</a>
                     </td>
-                    <td>26/04/2018</td>
-                    <td>Canon M6 và 1 sản phẩm khác</td>
-                    <td>32.150.000&nbsp;₫</td>
+                    <td>{{OrderDate}}</td>
+                    <td>{{number_format Total}}&nbsp;₫</td>
                     <td>
-                        <span class="order-status">Chưa giao hàng</span>
+                    </td>
+                    <td>
+                        <span class="order-status">{{Status}}}</span>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <a href="#">000003</a>
-                    </td>
-                    <td>01/04/2018</td>
-                    <td>Canon 77D</td>
-                    <td>21.290.000&nbsp;₫</td>
-                    <td>
-                        <span class="order-status">Giao hàng thành công</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#">000001</a>
-                    </td>
-                    <td>20/03/2018</td>
-                    <td>Canon M6</td>
-                    <td>16.100.000&nbsp;₫</td>
-                    <td>
-                        <span class="order-status">Giao hàng thành công</span>
-                    </td>
-                </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

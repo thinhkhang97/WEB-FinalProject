@@ -1,3 +1,12 @@
+{{#section 'js'}}
+<script type="text/javascript">
+    $('.add').on('click', function () {
+        var id = $(this).data('proid');
+        $('#proID').val(id);
+        $('#frmItem').submit();
+    });
+</script> 
+{{/section}}
 <div class="center_title_bar">
     {{product.proName}}</div>
 <div class="prod_box_big">
@@ -39,7 +48,7 @@
                 <span class="price">{{product.proPrice}} VND</span>
             </div>
             {{#if layoutVM.isLogged}}
-                <a href="#" class="addtocart">Thêm vào giỏ</a>
+                <a href="#" class="addtocart add" data-proid="{{proID}}">Thêm vào giỏ</a>
             {{/if}}
         </div>
     </div>
@@ -65,7 +74,7 @@
     <div class="bottom_prod_box"></div>
     <div class="prod_details_tab">
         {{#if ../layoutVM.isLogged}}
-        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        <a href="#" title="Thêm vào giỏ hàng" data-proid="{{proID}}" class="add"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
         {{/if}}
         <a href="#" title="Đã bán {{proQuantity}} sản phẩm">
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
@@ -97,7 +106,7 @@
     <div class="bottom_prod_box"></div>
     <div class="prod_details_tab">
         {{#if ../layoutVM.isLogged}}
-        <a href="#" title="Thêm vào giỏ hàng"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
+        <a href="#" title="Thêm vào giỏ hàng" data-proid="{{proID}}" class="add"><img src="images/cart.gif" alt="" border="0" class="left_bt"></a>
         {{/if}}
         <a href="#" title="Đã bán {{proQuantity}} sản phẩm">
             <img src="images/favs.gif" alt="" border="0" class="left_bt" />
@@ -109,3 +118,7 @@
     </div>
 </div>
 {{/each}}
+<form id="frmItem" method="post" action="/cart/add" style="display:none">
+    <input id="proID" type="text" name="proID">
+    <input id="proQuantity" type="number" name="proQuantity" value="1">
+</form>

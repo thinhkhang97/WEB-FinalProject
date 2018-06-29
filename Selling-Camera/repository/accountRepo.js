@@ -8,12 +8,21 @@ exports.update = (c) =>{
     var sql = `update users set hoten = '${c.hoten}', gioitinh = '${c.gioitinh}', dthoai = '${c.dthoai}', ngaysinh = '${c.ngaysinh}', diachi = '${c.diachi}', passwords = '${c.passwords}' where ID = ${c.ID}`;
     return db.save(sql);
 }
-exports.loadAllAccount = ()=>{
-    return db.load(`select * from users`);
+
+exports.loadOrder = (id) => {
+    var sql = `select * from orders where UserID='${id}' ORDER BY OrderDate DESC`;
+    return db.load(sql);
 }
-exports.deleteUser= c=>{
-    return db.save(`delete from users where ID = ${c.ID}`);
+
+exports.loadOrderUsers = (id) => {
+    var sql = `SELECT *
+    FROM orders, users
+    WHERE orders.OrderID='${id}'AND orders.UserID = users.ID`;
+    return db.load(sql);
 }
-exports.updateUser = c=>{
-    return db.save(`update users set hoten='${c.hoten}',dthoai='${c.dthoai}',diachi='${c.diachi}',email='${c.email}',username='${c.username}' where ID=${c.ID}`);
+exports.loadOrderDetail = (id) => {
+    var sql = `SELECt orderdetails.*, product.proCode, product.proName, product.proCatID
+    FROM orderdetails, product
+    where orderdetails.OrderID = '${id}' AND orderdetails.ProID = product.proID`;
+    return db.load(sql);
 }

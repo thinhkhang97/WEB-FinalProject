@@ -1,3 +1,10 @@
+{{#section 'js'}}
+<script>
+    function back(){
+        location.href = '/account/order';
+    }
+</script>
+{{/section}}
 <div class="left_content">
     <div class="title_box">Quản lý tài khoản</div>
     <ul class="left_menu">
@@ -6,33 +13,33 @@
                 <span class="glyphicon-user" aria-hidden="true" style="color: red"></span>Thông tin tài khoản</a>
         </li>
         <li class="profile_active">
-            <a href="#">
+            <a href="/account/order">
                 <span class="glyphicon-shopping-cart" aria-hidden="true" style="color: red"></span>Quản lý đơn hàng</a>
         </li>
     </ul>
 </div>
 <!-- end of left content -->
 <div class="content-right">
-    <h1 class="orderview-title">Chi tiết đơn hàng #000005 -
-        <strong> Chưa giao hàng</strong>
-        <p class="date">Ngày đặt hàng: 10:15 26/04/2018</p>
+    <h1 class="orderview-title">Chi tiết đơn hàng #{{orders.OrderID}} -
+        <strong>{{orders.Status}}}</strong>
+        <p class="date">Ngày đặt hàng: {{orders.OrderDate}}</p>
     </h1>
     <div class="account-order-detail">
         <div class="address-1">
             <h3>Địa chỉ người nhận</h3>
             <div>
-                <p class="name">Trần Nhật Hải</p>
+                <p class="name">{{orders.hoten}}</p>
                 <p>
-                    <span>Địa chỉ: </span>Ký túc xá khu B ĐHQG, Đông Hòa, Dĩ An, Bình Dương, Việt Nam</p>
+                    <span>Địa chỉ: </span>{{orders.diachi}}</p>
                 <p>
-                    <span>Điện thoại: </span>01636663059</p>
+                    <span>Điện thoại: </span>{{orders.dthoai}}</p>
             </div>
         </div>
         <div class="payment-1">
             <h3>Hình thức giao hàng</h3>
             <div>
                 <p>Vận chuyển Tiết Kiệm</p>
-                <p>50.000&nbsp;₫</p>
+                <p>{{number_format orders.Ship}}&nbsp;₫</p>
             </div>
         </div>
         <div class="payment-2">
@@ -54,69 +61,49 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each details}}
                 <tr>
                     <td>
-                        <a href="../details_User.html">
-                            <img src="../images/Mirr/Canon_m6.jpg" alt="" style="width: 100px; height: 80px; float: left;">
+                        <a href="/product?id={{pro.ProID}}">
+                            <img src="../images/{{fd}}/{{pro.proCode}}.jpg" alt="" style="width: 100px; height: 80px; float: left;">
                         </a>
                         <div class="info-item" style="padding-top: 2px; width: 214px;padding-left: 10px">
                             <p class="name">
-                                <a href="../details_User.html">Máy ảnh Canon M6</a>
+                                <a href="/product?id={{pro.ProID}}">{{pro.proName}}</a>
                             </p>
                             <p class="seller-by">
                                 Cung cấp bởi
-                                <a href="../index_User.html" style="color: blue">Thế giới máy ảnh</a>
+                                <a href="/" style="color: blue">Thế giới máy ảnh</a>
                             </p>
                         </div>
                     </td>
-                    <td>16.050.000&nbsp;₫</td>
-                    <td>1</td>
+                    <td>{{number_format pro.Price}}&nbsp;₫</td>
+                    <td>{{pro.Quantity}}</td>
                     <td>0&nbsp;₫</td>
                     <td>
-                        <span class="order-status">16.050.000&nbsp;₫</span>
+                        <span class="order-status">{{number_format pro.Amount}}&nbsp;₫</span>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <a href="../details_User.html">
-                            <img src="../images/Mirr/Canon_m6.jpg" alt="" style="width: 100px; height: 80px; float: left;">
-                        </a>
-                        <div class="info-item" style="padding-top: 2px; width: 214px;padding-left: 10px">
-                            <p class="name">
-                                <a href="../details_User.html">Máy ảnh Canon M6</a>
-                            </p>
-                            <p class="seller-by">
-                                Cung cấp bởi
-                                <a href="../index_User.html" style="color: blue">Thế giới máy ảnh</a>
-                            </p>
-                        </div>
-                    </td>
-                    <td>16.050.000&nbsp;₫</td>
-                    <td>1</td>
-                    <td>0&nbsp;₫</td>
-                    <td>
-                        <span class="order-status">16.050.000&nbsp;₫</span>
-                    </td>
-                </tr>
+                {{/each}}
                 <tfoot>
                     <tr>
                         <td colspan="4">
                             <span>Tổng tạm tính</span>
                         </td>
-                        <td>32.100.000&nbsp;₫</td>
+                        <td>{{number_format total}}&nbsp;₫</td>
                     </tr>
                     <tr>
                         <td colspan="4">
                             <span>Phí vận chuyển</span>
                         </td>
-                        <td>50.000&nbsp;₫</td>
+                        <td>{{number_format orders.Ship}}&nbsp;₫</td>
                     </tr>
                     <tr>
                         <td colspan="4">
                             <span>Tổng cộng</span>
                         </td>
                         <td>
-                            <span class="sum">32.150.000&nbsp;₫</span>
+                            <span class="sum">{{number_format orders.Total}}&nbsp;₫</span>
                         </td>
                     </tr>
                 </tfoot>

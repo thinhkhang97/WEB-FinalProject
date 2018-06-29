@@ -16,12 +16,13 @@ CREATE TABLE orders (
   UserID int NOT NULL,
   Ship int NOT NULL,
   Total bigint(20) NOT NULL,
+  Status nvarchar(20) NOT NULL,
   PRIMARY KEY (OrderID)
 );
 
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-8',123,1,123400000);
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-18',3,1,201350000);
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-28',1,1,4520000);
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-8',11,1,20111000);
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-8',13,1,123000100);
-insert into orders (OrderDate,UserID,Ship,Total) values ('2018-6-8',23,1,1230000);
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-8',123,1,123400000,'Chưa giao');
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-18',3,1,201350000,'Chưa giao');
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-28',1,1,4520000,'Chưa giao');
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-8',11,1,20111000,'Chưa giao');
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-8',13,1,123000100,'Chưa giao');
+insert into orders (OrderDate,UserID,Ship,Total,Status) values ('2018-6-8',23,1,1230000,'Chưa giao');

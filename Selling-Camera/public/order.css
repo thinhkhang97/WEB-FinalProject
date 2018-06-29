@@ -47,9 +47,12 @@ table {
 .table-custom tbody tr td {
     border: none;
     padding: 10px 15px;
+    font-size: 13px;
+    font-weight: 400;
     color: #242424;
     vertical-align: top;
     position: relative;
+    text-align: center;
 }
 .table-custom tbody tr td:last-child {
     text-align: right;
