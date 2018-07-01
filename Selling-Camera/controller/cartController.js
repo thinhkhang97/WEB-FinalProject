@@ -49,14 +49,15 @@ router.get('/pay', (req, res) => {
 
     var arr = [];
     if(req.session.cart.length == 0){
-        //res.redirect('/home');
+        // res.render('/');
+        // return;
     }
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
         var p = productRepo.loadProductByID(cartItem.proID);
         arr.push(p);
     }
-    var user = accountRepo.loadAccount(req.session.user.id);
+    var user = accountRepo.loadAccount(req.session.user.ID);
     arr.push(user);
     var items = [];
     var toTal = 0, ship = 0, toTal_ship = 0;
@@ -96,7 +97,6 @@ router.post('/add', (req, res) => {
     };
 
     cartRepo.add(req.session.cart, item);
-    console.log(req.session.cart),
     res.redirect(req.headers.referer);
 });
 
@@ -119,7 +119,6 @@ router.post('/change', (req, res) => {
 
 router.post('/pay', (req, res) => {
     var arr = [];
-    console.log("Processing orders");
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
         var p = productRepo.loadProductByID(cartItem.proID);
@@ -128,7 +127,6 @@ router.post('/pay', (req, res) => {
     var items=[];
     var toTal = 0, ship = 0, toTal_ship = 0;
     Promise.all(arr).then(result => {
-        
         for (var i = result.length - 1; i >= 0; i--) {
             var pro = result[i][0];    
             var item = {

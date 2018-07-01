@@ -10,9 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-    console.log(req.session.user);
     accountRepo.loadAccount(req.session.user.ID).then(rows => {
-        console.log(rows[0]);
         var vm = {
             userdetail: rows[0],
             layout: 'profileLayout.handlebars',
@@ -61,7 +59,7 @@ router.post('/profile', (req, res) => {
 });
 
 router.get('/order', (req, res) => {
-    var p1 = accountRepo.loadOrder(req.session.user.id);
+    var p1 = accountRepo.loadOrder(req.session.user.ID);
 
     Promise.all([p1]).then(([pRows]) => {
         var vm = {
